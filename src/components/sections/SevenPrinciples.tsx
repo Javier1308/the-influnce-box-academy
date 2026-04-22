@@ -27,8 +27,9 @@ export default function SevenPrinciples() {
           />
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {PRINCIPLES.slice(0, 6).map((p, i) => (
+        {/* First row: 4 cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {PRINCIPLES.slice(0, 4).map((p, i) => (
             <PrincipleCard
               key={p.name}
               emoji={p.emoji}
@@ -39,16 +40,17 @@ export default function SevenPrinciples() {
           ))}
         </div>
 
-        {/* 7th card centered */}
-        <div className="flex justify-center mt-4">
-          <div className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4">
+        {/* Second row: 3 cards centered */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 lg:mx-[12.5%]">
+          {PRINCIPLES.slice(4).map((p, i) => (
             <PrincipleCard
-              emoji={PRINCIPLES[6].emoji}
-              name={PRINCIPLES[6].name}
-              description={PRINCIPLES[6].description}
-              delay={0.42}
+              key={p.name}
+              emoji={p.emoji}
+              name={p.name}
+              description={p.description}
+              delay={0.28 + i * 0.07}
             />
-          </div>
+          ))}
         </div>
       </div>
     </section>
