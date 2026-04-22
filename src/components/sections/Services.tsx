@@ -27,7 +27,7 @@ export default function Services() {
           />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {SERVICES.map((service, i) => (
             <motion.div
               key={service.title}
@@ -35,6 +35,7 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1.0] as [number,number,number,number], delay: i * 0.12 }}
+              className="h-full"
             >
               <ServiceCard {...service} />
             </motion.div>

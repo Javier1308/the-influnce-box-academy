@@ -121,7 +121,7 @@ export const COACH = {
   name: 'Freddy Flórez',
   role: 'Founder & Coach Certificado',
   description:
-    'Primer peruano 🇵🇪 con doble certificación del Instituto Cialdini (EEUU): Facilitador Profesional y Coach. Comunicador, diseñador gráfico publicitario y actor con más de 25 años en servicio al cliente y 13 en el mundo corporativo de ventas. Actualmente cursando una segunda carrera en Marketing y Gestión Comercial.',
+    'Primer peruano con doble certificación del Instituto Cialdini (EEUU): Facilitador Profesional y Coach. Comunicador, diseñador gráfico publicitario y actor con más de 25 años en servicio al cliente y 13 en el mundo corporativo de ventas. Actualmente cursando una segunda carrera en Marketing y Gestión Comercial.',
   quote:
     'LA PERSUASIÓN NO ES SOLO UN ARTE, PUEDE SER ENSEÑADO Y APRENDIDO',
 };

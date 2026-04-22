@@ -32,7 +32,7 @@ export default function SevenPrinciples() {
           {PRINCIPLES.slice(0, 4).map((p, i) => (
             <PrincipleCard
               key={p.name}
-              emoji={p.emoji}
+
               name={p.name}
               description={p.description}
               delay={i * 0.07}
@@ -45,7 +45,7 @@ export default function SevenPrinciples() {
           {PRINCIPLES.slice(4).map((p, i) => (
             <PrincipleCard
               key={p.name}
-              emoji={p.emoji}
+
               name={p.name}
               description={p.description}
               delay={0.28 + i * 0.07}

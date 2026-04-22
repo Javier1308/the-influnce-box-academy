@@ -28,7 +28,7 @@ export default function ServiceCard({
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
-      className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col gap-5 hover:border-brand-yellow/30 hover:shadow-[0_0_30px_rgba(242,190,27,0.08)] transition-all duration-300"
+      className="h-full bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col gap-5 hover:border-brand-yellow/30 hover:shadow-[0_0_30px_rgba(242,190,27,0.08)] transition-all duration-300"
     >
       <span className="inline-block self-start bg-brand-cyan/20 text-brand-cyan border border-brand-cyan/30 text-xs font-semibold font-inter px-3 py-1 rounded-full uppercase tracking-wider">
         {badge}
@@ -67,26 +67,26 @@ export default function ServiceCard({
         </div>
       )}
 
-      <div className="mt-auto">
+      <div className="mt-auto flex flex-col gap-4">
         <Button variant="primary" href={ctaLink} external>
           {cta}
         </Button>
-      </div>
 
-      {testimonial && (
-        <div className="border-t border-white/10 pt-4 mt-2">
-          <Quote className="text-brand-yellow/50 mb-2" size={20} />
-          <p className="text-white/60 text-sm font-inter italic leading-relaxed mb-3">
-            "{testimonial.text}"
-          </p>
-          <div>
-            <p className="text-white font-semibold text-sm font-inter">
-              {testimonial.author}
+        {testimonial && (
+          <div className="border-t border-white/10 pt-4">
+            <Quote className="text-brand-yellow/50 mb-2" size={20} />
+            <p className="text-white/60 text-sm font-inter italic leading-relaxed mb-3">
+              "{testimonial.text}"
             </p>
-            <p className="text-white/50 text-xs font-inter">{testimonial.role}</p>
+            <div>
+              <p className="text-white font-semibold text-sm font-inter">
+                {testimonial.author}
+              </p>
+              <p className="text-white/50 text-xs font-inter">{testimonial.role}</p>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </motion.div>
   );
 }

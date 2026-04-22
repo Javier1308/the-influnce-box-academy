@@ -1,14 +1,12 @@
 import { motion } from 'framer-motion';
 
 type PrincipleCardProps = {
-  emoji: string;
   name: string;
   description: string;
   delay?: number;
 };
 
 export default function PrincipleCard({
-  emoji,
   name,
   description,
   delay = 0,
@@ -26,9 +24,8 @@ export default function PrincipleCard({
       }}
       className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3 cursor-default transition-colors"
     >
-      <span className="text-4xl">{emoji}</span>
       <h3
-        className="font-bold text-lg text-white"
+        className="font-bold text-2xl text-brand-yellow"
         style={{ fontFamily: "'Playfair Display', serif" }}
       >
         {name}
