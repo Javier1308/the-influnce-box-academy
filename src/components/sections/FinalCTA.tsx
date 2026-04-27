@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import Button from '../ui/Button';
-import { COACH, WHATSAPP_LINKS, SOCIAL_LINKS, IMAGE_URLS } from '../../data/content';
+import { WHATSAPP_LINKS, SOCIAL_LINKS } from '../../data/content';
 
 function LinkedinIcon({ size = 18 }: { size?: number }) {
   return (
