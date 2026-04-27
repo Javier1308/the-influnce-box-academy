@@ -1,3 +1,9 @@
+import Badge1 from '../../assets/images/Badge1.png';
+import Badge2 from '../../assets/images/Badge2.png';
+import Badge3 from '../../assets/images/Badge3.png';
+import ContactInfo from '../../assets/images/ContactInfo.png';
+import { WHATSAPP_LINKS, SOCIAL_LINKS } from '../../data/content';
+
 function LinkedinIcon({ size = 20 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -7,7 +13,6 @@ function LinkedinIcon({ size = 20 }: { size?: number }) {
     </svg>
   );
 }
-import { WHATSAPP_LINKS, SOCIAL_LINKS } from '../../data/content';
 
 export default function Footer() {
   return (
@@ -39,6 +44,37 @@ export default function Footer() {
             >
               <LinkedinIcon size={20} />
             </a>
+          </div>
+        </div>
+
+        {/* Badges + ContactInfo en dos columnas */}
+        <div className="mt-8 flex flex-col md:flex-row items-center justify-between gap-8">
+          {/* Badges de certificación */}
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <img
+              src={Badge1}
+              alt="Cialdini Certified Coach 2024"
+              className="h-36 md:h-40 w-auto object-contain drop-shadow-lg opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-200"
+            />
+            <img
+              src={Badge2}
+              alt="Founding Member — Cialdini Institute"
+              className="h-36 md:h-40 w-auto object-contain drop-shadow-lg opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-200"
+            />
+            <img
+              src={Badge3}
+              alt="Ethical Influence Practitioner — Accredited by Cialdini Institute"
+              className="h-36 md:h-40 w-auto object-contain drop-shadow-lg opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-200"
+            />
+          </div>
+
+          {/* Información de contacto */}
+          <div className="flex-shrink-0">
+            <img
+              src={ContactInfo}
+              alt="Información de contacto — The Influence Box Academy"
+              className="w-[24rem] md:w-[32rem] object-contain"
+            />
           </div>
         </div>
 

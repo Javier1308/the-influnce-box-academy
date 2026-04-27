@@ -16,7 +16,9 @@ export const HERO = {
   subtitle:
     '¡Se más persuasivo en cualquier entorno, aprende las mejores estrategias sustentadas desde la ciencia!',
   cta: '¡Mira el video de 8min!',
-  badge: '¡Hasta 60% de Dscto. hoy!',
+  badge: '',
+  welcome:
+    'Muchas gracias por tu interés en nuestros servicios de capacitaciones y asesorías, será un honor acompañarte en el desarrollo estratégico de tu influencia social y persuasión, con el objetivo de que generes resultados concretos en tu entorno profesional.',
 };
 
 export const PRINCIPLES = [
@@ -27,7 +29,7 @@ export const PRINCIPLES = [
   },
   {
     emoji: '😊',
-    name: 'Simpatía',
+    name: 'Agrado',
     description:
       'Las personas te dicen SÍ y quieren hacer negocios contigo si les agradas.',
   },
@@ -66,7 +68,7 @@ export const PRINCIPLES = [
 export const SERVICES = [
   {
     badge: 'Para aprender haciendo',
-    title: 'Workshops Intensivos',
+    title: 'Arquitectura de Influencia',
     subtitle: 'Online y Presencial',
     description:
       'Recibirás los conceptos más relevantes de la ciencia de la persuasión. Conocerás los Small-Bigs: pequeños cambios que traen grandes resultados.',
@@ -86,7 +88,7 @@ export const SERVICES = [
   },
   {
     badge: 'El más solicitado',
-    title: 'Coaching Uno a Uno',
+    title: 'Partner de Persuasión',
     subtitle: 'Tu influencia al siguiente nivel',
     description:
       'Resultados rápidos y tangibles en ventas, liderazgo o comunicación. 100% personalizado sobre tus retos y objetivos reales.',
@@ -103,7 +105,7 @@ export const SERVICES = [
   },
   {
     badge: 'El preferido de los equipos',
-    title: 'Desayuna & Aprende',
+    title: 'Café & Persuasión',
     subtitle: 'Para equipos y empresas',
     description:
       'Aprende mientras desayunas o almuerzas. Maximiza tu tiempo sin afectar tu rutina diaria, en un ambiente colaborativo.',

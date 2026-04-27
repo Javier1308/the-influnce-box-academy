@@ -25,35 +25,6 @@ export default function FinalCTA() {
           transition={{ duration: 0.6, ease: easeOut }}
           className="flex flex-col items-center gap-6"
         >
-          <img
-            src={IMAGE_URLS.coachFinal}
-            alt={`${COACH.name} — The Influence Box Academy`}
-            className="w-24 h-24 rounded-full object-cover border-2 border-brand-yellow shadow-[0_0_20px_rgba(242,190,27,0.3)]"
-          />
-
-          <div>
-            <p className="text-white/60 font-inter text-sm mb-1">{COACH.role}</p>
-            <h3
-              className="text-white font-bold text-2xl"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              {COACH.name}
-            </h3>
-          </div>
-
-          <blockquote>
-            <p
-              className="text-white text-xl md:text-2xl lg:text-3xl leading-tight max-w-2xl"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              "Agenda una llamada y recibe tu{' '}
-              <span className="text-brand-yellow">
-                Guía práctica de bolsillo
-              </span>{' '}
-              sobre los 7 principios de influencia — sin costo"
-            </p>
-          </blockquote>
-
           <div className="flex flex-col sm:flex-row gap-4 mt-4">
             <Button
               variant="outline"

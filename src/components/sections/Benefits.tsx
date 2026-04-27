@@ -16,17 +16,17 @@ const benefits = [
   },
   {
     title: 'Metodología 100% práctica',
-    desc: 'Aprenderás haciendo. Cada sesión incluye ejercicios, role plays y casos de estudio reales que puedes aplicar inmediatamente.',
+    desc: 'Aprenderás haciendo. Las sesiones incluyen ejercicios, role plays y casos de estudio reales que puedes aplicar inmediatamente.',
   },
   {
-    title: 'Certificación Internacional',
-    desc: 'Al completar el programa podrás acceder a la certificación oficial del Instituto Cialdini, reconocida globalmente como "Ethical Influence Practitioner".',
+    title: 'Certificado de nuestra Academia',
+    desc: 'Al completar el programa recibirás el certificado oficial de The Influence Box Academy, que acredita tu dominio de los 7 principios de influencia y persuasión ética.',
   },
 ];
 
 export default function Benefits() {
   return (
-    <section className="bg-brand-dark py-16 px-4 md:px-8 lg:px-16">
+    <section className="bg-brand-darker py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div

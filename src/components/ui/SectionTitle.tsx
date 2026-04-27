@@ -36,7 +36,7 @@ export default function SectionTitle({
         {renderTitle()}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-white/70 font-inter text-base md:text-lg max-w-2xl">
+        <p className={`mt-4 text-white/70 font-inter text-base md:text-lg max-w-2xl ${centered ? 'mx-auto' : ''}`}>
           {subtitle}
         </p>
       )}

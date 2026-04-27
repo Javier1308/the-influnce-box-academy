@@ -9,8 +9,6 @@ import AboutCialdini from './components/sections/AboutCialdini';
 import Certification from './components/sections/Certification';
 import AboutCoach from './components/sections/AboutCoach';
 import SocialProof from './components/sections/SocialProof';
-import GiftOffer from './components/sections/GiftOffer';
-import FinalCTA from './components/sections/FinalCTA';
 
 function App() {
   return (
@@ -19,15 +17,13 @@ function App() {
       <main className="flex-1">
         <Hero />
         <WhyInfluence />
+        <SocialProof />
         <Benefits />
         <Services />
         <SevenPrinciples />
         <AboutCialdini />
         <Certification />
         <AboutCoach />
-        <SocialProof />
-        <GiftOffer />
-        <FinalCTA />
       </main>
       <Footer />
     </div>
