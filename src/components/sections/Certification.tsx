@@ -10,7 +10,7 @@ const fadeUp: Variants = {
 
 export default function Certification() {
   return (
-    <section className="bg-brand-darker py-16 px-4 md:px-8 lg:px-16">
+    <section className="bg-brand-darker py-10 md:py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
         <motion.div
           variants={fadeUp}
@@ -33,10 +33,10 @@ export default function Certification() {
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
           transition={{ delay: 0.1 }}
-          className="relative rounded-3xl overflow-hidden border border-brand-cyan/20 shadow-[0_0_60px_rgba(95,197,227,0.08)] bg-gradient-to-br from-brand-cyan/5 to-transparent p-8 md:p-12"
+          className="relative rounded-3xl overflow-hidden border border-brand-cyan/20 shadow-[0_0_60px_rgba(95,197,227,0.08)] bg-gradient-to-br from-brand-cyan/5 to-transparent p-5 sm:p-8 md:p-12"
         >
           <div className="absolute top-4 right-4 border border-dashed border-brand-cyan/20 rounded-2xl inset-4 pointer-events-none" />
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-full bg-brand-yellow/20 flex items-center justify-center">
@@ -48,7 +48,7 @@ export default function Certification() {
               </div>
 
               <h2
-                className="font-bold text-3xl md:text-4xl text-white mb-4 leading-tight"
+                className="font-bold text-2xl sm:text-3xl md:text-4xl text-white mb-4 leading-tight"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 Conviértete en{' '}
@@ -87,7 +87,7 @@ export default function Certification() {
               <img
                 src={IMAGE_URLS.certification}
                 alt="Certificación Ethical Influence Practitioner — Instituto Cialdini"
-                className="w-full max-w-sm rounded-2xl border border-brand-yellow/20 shadow-[0_0_40px_rgba(242,190,27,0.15)]"
+                className="w-full max-w-[260px] sm:max-w-xs md:max-w-sm rounded-2xl border border-brand-yellow/20 shadow-[0_0_40px_rgba(242,190,27,0.15)]"
               />
             </div>
           </div>

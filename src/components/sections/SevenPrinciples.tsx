@@ -10,7 +10,7 @@ const fadeUp: Variants = {
 
 export default function SevenPrinciples() {
   return (
-    <section id="principles" className="bg-brand-darker py-16 px-4 md:px-8 lg:px-16">
+    <section id="principles" className="bg-brand-darker py-10 md:py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
         <motion.div
           variants={fadeUp}
@@ -41,7 +41,7 @@ export default function SevenPrinciples() {
         </div>
 
         {/* Second row: 3 cards centered */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 lg:mx-[12.5%]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 lg:mx-[12.5%]">
           {PRINCIPLES.slice(4).map((p, i) => (
             <PrincipleCard
               key={p.name}

@@ -9,7 +9,7 @@ const fadeUp: Variants = {
 
 export default function SocialProof() {
   return (
-    <section className="bg-brand-dark py-16 px-4 md:px-8 lg:px-16">
+    <section className="bg-brand-dark py-10 md:py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-4xl mx-auto">
 
         {/* Respaldo científico label */}
@@ -36,17 +36,17 @@ export default function SocialProof() {
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
           transition={{ delay: 0.1 }}
-          className="relative rounded-3xl overflow-hidden border border-brand-yellow/20 bg-white/5 shadow-[0_0_40px_rgba(242,190,27,0.07)] p-8 md:p-12"
+          className="relative rounded-3xl overflow-hidden border border-brand-yellow/20 bg-white/5 shadow-[0_0_40px_rgba(242,190,27,0.07)] p-5 sm:p-8 md:p-12"
         >
           {/* Watermark quote */}
           <div className="absolute top-4 right-6 text-brand-yellow/10 text-9xl font-serif leading-none select-none">"</div>
 
-          <div className="flex flex-col lg:flex-row gap-8 items-center">
+          <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start">
             <div className="flex-shrink-0 flex flex-col items-center gap-3">
               <img
                 src={IMAGE_URLS.wef}
                 alt="World Economic Forum"
-                className="w-24 h-24 md:w-32 md:h-32 rounded-2xl object-cover border border-white/10"
+                className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-2xl object-cover border border-white/10"
               />
             </div>
 
@@ -61,7 +61,7 @@ export default function SocialProof() {
 
               <blockquote>
                 <p
-                  className="text-white text-xl md:text-2xl lg:text-3xl leading-tight mb-4"
+                  className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl leading-tight mb-4"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   "La <span className="text-brand-yellow">influencia y persuasión</span> están entre las habilidades humanas de mayor crecimiento en demanda para los próximos años."

@@ -22,10 +22,10 @@ export default function PrincipleCard({
         borderColor: 'rgba(242,190,27,0.6)',
         boxShadow: '0 0 20px rgba(242,190,27,0.2)',
       }}
-      className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3 cursor-default transition-colors"
+      className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-5 lg:p-6 flex flex-col gap-3 cursor-default transition-colors"
     >
       <h3
-        className="font-bold text-2xl text-brand-yellow"
+        className="font-bold text-lg sm:text-xl lg:text-2xl text-brand-yellow"
         style={{ fontFamily: "'Playfair Display', serif" }}
       >
         {name}

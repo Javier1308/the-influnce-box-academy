@@ -16,7 +16,7 @@ const easeOut = [0.25, 0.1, 0.25, 1.0] as [number, number, number, number];
 
 export default function FinalCTA() {
   return (
-    <section className="bg-brand-dark py-16 px-4 md:px-8 lg:px-16">
+    <section className="bg-brand-dark py-10 md:py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

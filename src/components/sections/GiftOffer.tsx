@@ -19,14 +19,14 @@ export default function GiftOffer() {
   };
 
   return (
-    <section className="bg-brand-darker py-16 px-4 md:px-8 lg:px-16">
+    <section className="bg-brand-darker py-10 md:py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-3xl mx-auto">
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
-          className="border-2 border-brand-yellow/30 rounded-3xl bg-brand-yellow/5 p-8 md:p-12 text-center shadow-[0_0_40px_rgba(242,190,27,0.1)]"
+          className="border-2 border-brand-yellow/30 rounded-3xl bg-brand-yellow/5 p-5 sm:p-8 md:p-12 text-center shadow-[0_0_40px_rgba(242,190,27,0.1)]"
         >
           <div className="flex justify-center mb-4">
             <div className="w-14 h-14 rounded-full bg-brand-yellow/20 flex items-center justify-center">
@@ -35,7 +35,7 @@ export default function GiftOffer() {
           </div>
 
           <h2
-            className="font-bold text-2xl md:text-3xl text-white mb-4"
+            className="font-bold text-xl sm:text-2xl md:text-3xl text-white mb-4"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Un regalo especial para ti
@@ -45,18 +45,20 @@ export default function GiftOffer() {
             {GIFT.message}
           </p>
 
-          <div className="inline-flex items-center gap-3 bg-brand-dark border border-brand-yellow/40 rounded-xl px-6 py-4 mb-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 bg-brand-dark border border-brand-yellow/40 rounded-xl px-4 sm:px-6 py-4 mb-6 w-full sm:w-auto">
             <span className="text-white/60 font-inter text-sm">Tu código de descuento:</span>
-            <code className="text-brand-yellow font-mono font-bold text-xl tracking-widest">
-              {GIFT.code}
-            </code>
-            <button
-              onClick={handleCopy}
-              className="text-white/50 hover:text-brand-yellow transition-colors"
-              aria-label="Copiar código"
-            >
-              <Copy size={18} />
-            </button>
+            <div className="flex items-center gap-3">
+              <code className="text-brand-yellow font-mono font-bold text-xl tracking-widest">
+                {GIFT.code}
+              </code>
+              <button
+                onClick={handleCopy}
+                className="text-white/50 hover:text-brand-yellow transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+                aria-label="Copiar código"
+              >
+                <Copy size={18} />
+              </button>
+            </div>
           </div>
 
           {copied && (

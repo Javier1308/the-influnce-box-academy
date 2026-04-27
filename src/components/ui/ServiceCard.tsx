@@ -28,7 +28,7 @@ export default function ServiceCard({
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
-      className="h-full bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col gap-5 hover:border-brand-yellow/30 hover:shadow-[0_0_30px_rgba(242,190,27,0.08)] transition-all duration-300"
+      className="h-full bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-6 md:p-8 flex flex-col gap-5 hover:border-brand-yellow/30 hover:shadow-[0_0_30px_rgba(242,190,27,0.08)] transition-all duration-300"
     >
       <span className="inline-block self-start bg-brand-cyan/20 text-brand-cyan border border-brand-cyan/30 text-xs font-semibold font-inter px-3 py-1 rounded-full uppercase tracking-wider">
         {badge}

@@ -39,7 +39,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative max-w-6xl mx-auto px-4 md:px-8 lg:px-16 pt-24 pb-10">
+      <div className="relative max-w-6xl mx-auto px-4 md:px-8 lg:px-16 pt-12 sm:pt-16 md:pt-24 pb-6 md:pb-10">
 
         {/* ── 1. TÍTULO PRINCIPAL ── */}
         <motion.div
@@ -78,7 +78,7 @@ export default function Hero() {
           )}
 
           <h1
-            className="font-black text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white leading-tight mb-0"
+            className="font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white leading-tight mb-0"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Aprenderás a aplicar la{' '}
@@ -114,7 +114,7 @@ export default function Hero() {
             <button
               onClick={() => setVideoOpen(true)}
               aria-label="Ver video de 8 minutos"
-              className="group flex items-center justify-center w-24 h-24 rounded-full bg-brand-yellow hover:scale-110 transition-transform shadow-[0_0_40px_rgba(242,190,27,0.5)] mb-4"
+              className="group flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-brand-yellow hover:scale-110 transition-transform shadow-[0_0_40px_rgba(242,190,27,0.5)] mb-4"
             >
               <Play className="text-black ml-1" size={36} fill="black" />
             </button>
@@ -130,7 +130,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           transition={{ delay: 0.35 }}
-          className="flex flex-col sm:flex-row justify-center items-start gap-8 mb-16"
+          className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-8 md:mb-16"
         >
           <Button variant="primary" href={WHATSAPP_LINKS.workshop} external className="text-base px-8 py-4">
             {HERO.cta}
@@ -157,7 +157,7 @@ export default function Hero() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
-          className="flex flex-col md:flex-row items-center justify-center gap-10 border-t border-white/10 pt-14 pb-10"
+          className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 border-t border-white/10 pt-8 md:pt-14 pb-6 md:pb-10"
         >
           {/* Texto de bienvenida */}
           <div className="flex flex-col gap-6 max-w-xl text-center md:text-left">
@@ -166,7 +166,7 @@ export default function Hero() {
               Bienvenido/a
             </div>
             <p
-              className="text-white/90 text-2xl md:text-3xl lg:text-4xl leading-relaxed"
+              className="text-white/90 text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-relaxed"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               "{HERO.welcome}"
@@ -180,7 +180,7 @@ export default function Hero() {
               <img
                 src={FreddyImg}
                 alt="Freddy Flórez — Founder & Coach Certificado"
-                className="relative w-80 md:w-96 lg:w-[28rem] rounded-2xl object-cover border border-white/10 shadow-[0_0_40px_rgba(242,190,27,0.15)]"
+                className="relative w-full max-w-xs sm:w-72 md:w-80 lg:w-96 xl:w-[28rem] rounded-2xl object-cover border border-white/10 shadow-[0_0_40px_rgba(242,190,27,0.15)]"
               />
               {/* Name card */}
               <div className="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-md rounded-xl px-4 py-3 border border-white/10">

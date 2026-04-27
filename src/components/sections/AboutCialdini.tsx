@@ -11,9 +11,9 @@ const fadeUp: Variants = {
 
 export default function AboutCialdini() {
   return (
-    <section className="bg-brand-dark py-16 px-4 md:px-8 lg:px-16">
+    <section className="bg-brand-dark py-10 md:py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div
             variants={fadeUp}
             initial="hidden"
