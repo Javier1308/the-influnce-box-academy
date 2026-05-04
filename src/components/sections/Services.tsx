@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { CheckCircle } from 'lucide-react';
-import { SERVICES, IMAGE_URLS, WHATSAPP_LINKS } from '../../data/content';
+import { SERVICES, IMAGE_URLS } from '../../data/content';
 
 const easeOut = [0.25, 0.1, 0.25, 1.0] as [number, number, number, number];
 
