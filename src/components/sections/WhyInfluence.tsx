@@ -28,19 +28,28 @@ export default function WhyInfluence() {
             viewport={{ once: true, margin: '-80px' }}
           >
             <SectionTitle
-              title="¿Por qué aprender Influencia?"
-              highlight="Influencia"
+              title="¿Por qué aprender sobre Persuasión e Influencia social?"
+              highlight="Persuasión e Influencia social"
               subtitle="La capacidad de influir es la habilidad #1 más demandada por empresas y líderes del mundo. No importa tu industria — quien influye, lidera."
+              justify
             />
-            <p className="text-white/70 font-inter text-sm md:text-base leading-relaxed mt-4">
+            <p className="text-white/70 font-inter text-sm md:text-base leading-relaxed mt-4 text-justify">
               La ciencia de la persuasión del Dr. Robert Cialdini lleva más de 40 años de investigación. Sus principios están detrás de las decisiones más importantes que se toman en el mundo empresarial, político y personal.
             </p>
-            <p className="text-white/70 font-inter text-sm md:text-base leading-relaxed mt-3">
+            <p className="text-white/70 font-inter text-sm md:text-base leading-relaxed mt-3 text-justify">
               En The Influence Box Academy te enseñamos a aplicarlos de forma{' '}
               <span className="text-brand-yellow font-semibold">ética, estratégica y efectiva</span>.
             </p>
           </motion.div>
 
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="flex-1 h-px bg-brand-yellow/60" />
+              <span className="text-brand-yellow text-xs font-semibold font-inter uppercase tracking-widest whitespace-nowrap">
+                Impulsar el éxito en otras áreas de negocio
+              </span>
+              <span className="flex-1 h-px bg-brand-yellow/60" />
+            </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {areas.map((area, i) => (
               <motion.div
@@ -62,6 +71,7 @@ export default function WhyInfluence() {
                 </p>
               </motion.div>
             ))}
+          </div>
           </div>
         </div>
       </div>

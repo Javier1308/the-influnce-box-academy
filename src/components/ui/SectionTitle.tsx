@@ -3,6 +3,7 @@ type SectionTitleProps = {
   highlight?: string;
   subtitle?: string;
   centered?: boolean;
+  justify?: boolean;
 };
 
 export default function SectionTitle({
@@ -10,6 +11,7 @@ export default function SectionTitle({
   highlight,
   subtitle,
   centered = false,
+  justify = false,
 }: SectionTitleProps) {
   const alignment = centered ? 'text-center' : 'text-left';
 
@@ -36,7 +38,7 @@ export default function SectionTitle({
         {renderTitle()}
       </h2>
       {subtitle && (
-        <p className={`mt-4 text-white/70 font-inter text-base md:text-lg max-w-2xl ${centered ? 'mx-auto' : ''}`}>
+        <p className={`mt-4 text-white/70 font-inter text-base md:text-lg max-w-2xl ${centered ? 'mx-auto' : ''} ${justify ? 'text-justify' : ''}`}>
           {subtitle}
         </p>
       )}

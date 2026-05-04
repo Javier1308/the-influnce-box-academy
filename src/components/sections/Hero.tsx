@@ -3,8 +3,11 @@ import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { Play, ChevronDown, X } from 'lucide-react';
 import Button from '../ui/Button';
 import { HERO, WHATSAPP_LINKS } from '../../data/content';
-import FreddyImg from '../../assets/images/Freddy.jpeg';
 import { useCountdownOffer } from '../../hooks/useCountdownOffer';
+import FreddyImg from '../../assets/images/Freddy.jpeg';
+import Badge1 from '../../assets/images/Badge1.png';
+import Badge2 from '../../assets/images/Badge2.png';
+import Badge3 from '../../assets/images/Badge3.png';
 
 // Pega aquí la URL del video cuando la tengas (YouTube embed o similar)
 // Ejemplo YouTube: 'https://www.youtube.com/embed/TU_ID_AQUI'
@@ -39,7 +42,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative max-w-6xl mx-auto px-4 md:px-8 lg:px-16 pt-12 sm:pt-16 md:pt-24 pb-6 md:pb-10">
+      <div className="relative max-w-6xl mx-auto px-4 md:px-8 lg:px-16 pt-6 sm:pt-8 md:pt-14 pb-6 md:pb-10">
 
         {/* ── 1. TÍTULO PRINCIPAL ── */}
         <motion.div
@@ -48,35 +51,6 @@ export default function Hero() {
           animate="visible"
           className="text-center mb-4"
         >
-          {/* Oferta con contador */}
-          {offer.active ? (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="inline-flex flex-col items-center gap-2 mb-6"
-            >
-              <div className="inline-flex items-center gap-2 border border-brand-yellow text-brand-yellow text-xs font-semibold font-inter px-4 py-1.5 rounded-full bg-brand-yellow/10">
-                <span className="inline-block w-2 h-2 rounded-full bg-brand-yellow animate-pulse" />
-                ¡Oferta de bienvenida — 40% de descuento total!
-              </div>
-              <div className="flex items-center gap-1 text-white/80 font-inter text-xs">
-                <span>Expira en</span>
-                <span className="font-mono font-bold text-brand-yellow text-sm tabular-nums">
-                  {offer.hours}:{offer.minutes}:{offer.seconds}
-                </span>
-                <span>· Usa el código de la guía + 20% extra ahora</span>
-              </div>
-            </motion.div>
-          ) : (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="inline-flex items-center gap-2 border border-white/20 text-white/50 text-xs font-inter px-4 py-1.5 rounded-full mb-6"
-            >
-              Descarga la guía y obtén tu 20% de descuento permanente
-            </motion.div>
-          )}
-
           <h1
             className="font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white leading-tight mb-0"
             style={{ fontFamily: "'Playfair Display', serif" }}
@@ -90,16 +64,18 @@ export default function Hero() {
           </h1>
         </motion.div>
 
-        {/* ── 2. SUBTÍTULO ── */}
-        <motion.p
+        {/* ── 2. CTA centrado ── */}
+        <motion.div
           variants={fadeUp}
           initial="hidden"
           animate="visible"
           transition={{ delay: 0.15 }}
-          className="text-center text-white/65 font-inter text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="flex justify-center mt-8 mb-8"
         >
-          {HERO.subtitle}
-        </motion.p>
+          <Button variant="primary" href={WHATSAPP_LINKS.workshop} external className="text-base px-8 py-4">
+            {HERO.cta}
+          </Button>
+        </motion.div>
 
         {/* ── 3. VIDEO (ancho completo) ── */}
         <motion.div
@@ -124,68 +100,103 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* ── 4. BOTONES CTA ── */}
+        {/* ── 4. OFERTA + DESCARGA ── */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           animate="visible"
           transition={{ delay: 0.35 }}
-          className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-8 md:mb-16"
+          className="flex flex-col items-center gap-4 mb-10"
         >
-          <Button variant="primary" href={WHATSAPP_LINKS.workshop} external className="text-base px-8 py-4">
-            {HERO.cta}
-          </Button>
-          {/* Reemplaza null por: import GuiaPDF from '../../assets/guia-de-bolsillo.pdf' y pasa GuiaPDF aquí */}
-          <div className="flex flex-col items-center gap-3">
+          {/* Badge oferta + countdown */}
+          {offer.active && (
+            <div className="flex flex-col items-center gap-2">
+              <div className="inline-flex items-center gap-2 border border-brand-yellow text-brand-yellow text-xs font-semibold font-inter px-4 py-1.5 rounded-full bg-brand-yellow/10">
+                <span className="inline-block w-2 h-2 rounded-full bg-brand-yellow animate-pulse" />
+                ¡Oferta de bienvenida — 40% de descuento total!
+              </div>
+              <div className="flex items-center gap-1 text-white/80 font-inter text-sm">
+                <span>Expira en</span>
+                <span className="font-mono font-bold text-brand-yellow tabular-nums">
+                  {offer.hours}:{offer.minutes}:{offer.seconds}
+                </span>
+              </div>
+            </div>
+          )}
+
+          {/* Botón descarga + mensaje cyan */}
+          <div className="flex flex-col items-center gap-2">
             <a
               href={undefined}
               download="Guia-de-Bolsillo-The-Influence-Box-Academy.pdf"
-              className="inline-flex items-center justify-center gap-2 border border-brand-yellow text-brand-yellow font-semibold font-inter text-base px-8 py-4 rounded-full hover:bg-brand-yellow/10 transition-colors opacity-50 cursor-not-allowed"
+              className="inline-flex items-center justify-center gap-2 border border-brand-yellow text-brand-yellow font-semibold font-inter text-base px-8 py-4 rounded-full opacity-50 cursor-not-allowed"
               aria-disabled="true"
             >
               Descarga tu guía de bolsillo
             </a>
             <span className="text-brand-cyan text-xs font-inter font-medium tracking-wide">
-              — Regalo para ti, sin costo —
+              — Sin costo —
             </span>
           </div>
         </motion.div>
 
-        {/* ── 5. BIENVENIDA + FOTO FREDDY ── */}
+        {/* ── 5. BIENVENIDA ── */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
-          className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 border-t border-white/10 pt-8 md:pt-14 pb-6 md:pb-10"
+          className="border-t border-white/10 pt-10 md:pt-14 pb-6 md:pb-10"
+          style={{ fontFamily: "'Montserrat', sans-serif" }}
         >
-          {/* Texto de bienvenida */}
-          <div className="flex flex-col gap-6 max-w-xl text-center md:text-left">
-            <div className="inline-flex items-center justify-center md:justify-start gap-2 text-brand-cyan text-xs font-semibold font-inter tracking-widest uppercase">
-              <span className="block w-8 h-px bg-brand-cyan" />
-              Bienvenido/a
-            </div>
-            <p
-              className="text-white/90 text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-relaxed"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              "{HERO.welcome}"
-            </p>
+          {/* Label BIENVENIDOS con líneas */}
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <span className="flex-1 max-w-[80px] h-px bg-brand-cyan/60" />
+            <span className="text-brand-cyan text-xs font-bold tracking-widest uppercase">
+              Bienvenidos
+            </span>
+            <span className="flex-1 max-w-[80px] h-px bg-brand-cyan/60" />
           </div>
 
-          {/* Foto Freddy */}
-          <div className="flex-shrink-0 flex justify-center">
-            <div className="relative">
-              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-brand-yellow/30 to-brand-cyan/20 blur-lg" />
-              <img
-                src={FreddyImg}
-                alt="Freddy Flórez — Founder & Coach Certificado"
-                className="relative w-full max-w-xs sm:w-72 md:w-80 lg:w-96 xl:w-[28rem] rounded-2xl object-cover border border-white/10 shadow-[0_0_40px_rgba(242,190,27,0.15)]"
-              />
-              {/* Name card */}
-              <div className="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-md rounded-xl px-4 py-3 border border-white/10">
-                <p className="text-white font-semibold font-inter text-sm leading-tight">Freddy Flórez</p>
-                <p className="text-brand-yellow text-xs font-inter mt-0.5">Founder & Coach Certificado · Instituto Cialdini</p>
+          {/* Cita centrada */}
+          <p
+            className="text-white/90 text-xl sm:text-2xl md:text-3xl leading-relaxed text-center max-w-3xl mx-auto mb-10"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
+            "{HERO.welcome}"
+          </p>
+
+          {/* Firma: foto circular + nombre + badges — caja oscura */}
+          <div className="flex justify-center">
+            <div className="flex items-center gap-5 bg-black/40 rounded-2xl px-6 py-4 shadow-[0_4px_24px_rgba(0,0,0,0.5)]">
+              {/* Foto circular */}
+              <div className="relative flex-shrink-0">
+                <div className="absolute -inset-0.5 rounded-full bg-gradient-to-br from-brand-yellow/40 to-brand-cyan/20 blur" />
+                <img
+                  src={FreddyImg}
+                  alt="Freddy Flórez — Founder & Coach Certificado"
+                  className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover object-top border-2 border-white/20"
+                />
+              </div>
+
+              {/* Nombre y rol */}
+              <div className="flex flex-col gap-0.5">
+                <p className="text-white font-bold text-base sm:text-lg leading-tight">
+                  Freddy Flórez
+                </p>
+                <p className="text-white/50 text-[11px] uppercase tracking-wider">
+                  Founder – Coach de Persuasión
+                </p>
+                <p className="text-brand-cyan text-[11px] mt-0.5">
+                  Profesional Certificado de Influencia Social · Cialdini Institute
+                </p>
+              </div>
+
+              {/* Badges de certificación */}
+              <div className="hidden sm:flex items-center gap-3 ml-2">
+                <img src={Badge1} alt="Certificación Cialdini 1" className="h-24 w-auto object-contain" />
+                <img src={Badge2} alt="Certificación Cialdini 2" className="h-24 w-auto object-contain" />
+                <img src={Badge3} alt="Certificación Cialdini 3" className="h-24 w-auto object-contain" />
               </div>
             </div>
           </div>

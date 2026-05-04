@@ -1,10 +1,16 @@
-import Badge1 from '../../assets/images/Badge1.png';
-import Badge2 from '../../assets/images/Badge2.png';
-import Badge3 from '../../assets/images/Badge3.png';
-import ContactInfo from '../../assets/images/ContactInfo.png';
+import LogoSolo from '../../assets/images/LogoSolo.png';
+import Swoosh from '../../assets/images/Swoosh.png';
 import { WHATSAPP_LINKS, SOCIAL_LINKS } from '../../data/content';
 
-function LinkedinIcon({ size = 20 }: { size?: number }) {
+function WhatsAppIcon({ size = 22 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  );
+}
+
+function LinkedinIcon({ size = 22 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -14,71 +20,116 @@ function LinkedinIcon({ size = 20 }: { size?: number }) {
   );
 }
 
+function GlobeIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <line x1="2" y1="12" x2="22" y2="12" />
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    </svg>
+  );
+}
+
+function MailIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="M2 7l10 7 10-7" />
+    </svg>
+  );
+}
+
 export default function Footer() {
   return (
-    <footer className="bg-brand-darker border-t border-white/10 py-8 md:py-10 px-4 md:px-8 lg:px-16">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 md:gap-6">
-          <p
-            className="font-bold text-base"
-            style={{ fontFamily: "'Playfair Display', serif", color: '#F2BE1B' }}
-          >
-            THE INFLUENCE BOX ACADEMY
-          </p>
+    <footer className="bg-brand-darker border-t border-white/10">
+      {/* Main footer body */}
+      <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-16 py-12 md:py-16 flex flex-col md:flex-row items-start justify-between gap-12">
 
-          <div className="flex items-center gap-4">
+        {/* LEFT: Logo image (already contains brand text) + contact + social */}
+        <div className="flex flex-col gap-6">
+          <img
+            src={LogoSolo}
+            alt="The Influence Box Academy"
+            className="w-56 md:w-64 object-contain"
+          />
+
+          {/* Contact info */}
+          <div className="flex flex-col gap-2 text-sm text-white/55 font-inter">
             <a
-              href={WHATSAPP_LINKS.workshop}
+              href="mailto:academy@theinfluencebox.com"
+              className="flex items-center gap-2 hover:text-white/80 transition-colors"
+            >
+              <MailIcon size={15} />
+              academy@theinfluencebox.com
+            </a>
+            <a
+              href={WHATSAPP_LINKS.empresas}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/60 hover:text-white text-sm font-inter transition-colors"
+              className="flex items-center gap-2 hover:text-white/80 transition-colors"
             >
-              WhatsApp
+              <WhatsAppIcon size={15} />
+              954 707 181
+            </a>
+            <a
+              href="https://www.theinfluencebox.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-white/80 transition-colors"
+            >
+              <GlobeIcon size={15} />
+              www.theinfluencebox.com
+            </a>
+          </div>
+
+          {/* Social icons */}
+          <div className="flex items-center gap-3">
+            <a
+              href={WHATSAPP_LINKS.empresas}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 flex items-center justify-center text-white/70 hover:text-white transition-all"
+            >
+              <WhatsAppIcon size={20} />
             </a>
             <a
               href={SOCIAL_LINKS.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/60 hover:text-brand-cyan transition-colors"
               aria-label="LinkedIn de Freddy Flórez"
+              className="w-11 h-11 rounded-lg bg-[#0A66C2] hover:bg-[#0A66C2]/80 flex items-center justify-center text-white transition-all"
             >
               <LinkedinIcon size={20} />
             </a>
           </div>
         </div>
 
-        {/* Badges + ContactInfo en dos columnas */}
-        <div className="mt-6 md:mt-8 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
-          {/* Badges de certificación */}
-          <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
-            <img
-              src={Badge1}
-              alt="Cialdini Certified Coach 2024"
-              className="h-24 sm:h-28 md:h-32 lg:h-36 w-auto object-contain drop-shadow-lg opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-200"
-            />
-            <img
-              src={Badge2}
-              alt="Founding Member — Cialdini Institute"
-              className="h-24 sm:h-28 md:h-32 lg:h-36 w-auto object-contain drop-shadow-lg opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-200"
-            />
-            <img
-              src={Badge3}
-              alt="Ethical Influence Practitioner — Accredited by Cialdini Institute"
-              className="h-24 sm:h-28 md:h-32 lg:h-36 w-auto object-contain drop-shadow-lg opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-200"
-            />
+        {/* RIGHT: Tagline + swoosh */}
+        <div className="flex items-center justify-center md:self-center gap-4">
+          {/* Text lines */}
+          <div className="flex flex-col" style={{ lineHeight: 1.1 }}>
+            <p className="text-3xl md:text-4xl text-white/80 italic font-light font-inter">
+              ...más rápido,
+            </p>
+            <p className="text-3xl md:text-4xl text-brand-cyan italic font-light font-inter">
+              donde quieras estar
+            </p>
           </div>
-
-          {/* Información de contacto */}
-          <div className="flex-shrink-0 w-full sm:w-auto">
-            <img
-              src={ContactInfo}
-              alt="Información de contacto — The Influence Box Academy"
-              className="w-full max-w-xs sm:max-w-sm md:w-96 lg:w-[32rem] mx-auto object-contain"
-            />
-          </div>
+          {/* Swoosh centered between the two lines */}
+          <img
+            src={Swoosh}
+            alt=""
+            aria-hidden="true"
+            className="w-40 object-contain flex-shrink-0"
+          />
         </div>
 
-        <div className="mt-6 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/40 font-inter text-center">
+      </div>
+
+      {/* Bottom bar */}
+      <div className="border-t border-white/5">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-16 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/30 font-inter">
           <p>© {new Date().getFullYear()} The Influence Box Academy. Todos los derechos reservados.</p>
           <p>Powered by The Influence Box Academy</p>
         </div>

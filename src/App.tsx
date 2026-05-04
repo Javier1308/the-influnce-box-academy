@@ -9,6 +9,7 @@ import AboutCialdini from './components/sections/AboutCialdini';
 import Certification from './components/sections/Certification';
 import AboutCoach from './components/sections/AboutCoach';
 import SocialProof from './components/sections/SocialProof';
+import LinkedInProof from './components/sections/LinkedInProof';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <WhyInfluence />
         <SocialProof />
         <Benefits />
+        <LinkedInProof />
         <Services />
         <SevenPrinciples />
         <AboutCialdini />

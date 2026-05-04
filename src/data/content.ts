@@ -69,7 +69,7 @@ export const SERVICES = [
   {
     badge: 'Para aprender haciendo',
     title: 'Arquitectura de Influencia',
-    subtitle: 'Online y Presencial',
+    subtitle: 'Presencial',
     description:
       'Recibirás los conceptos más relevantes de la ciencia de la persuasión. Conocerás los Small-Bigs: pequeños cambios que traen grandes resultados.',
     benefits: [

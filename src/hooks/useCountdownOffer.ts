@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const STORAGE_KEY = 'tiba_offer_start';
+const STORAGE_KEY = 'tiba_offer_start_v2';
 const OFFER_DURATION_MS = 24 * 60 * 60 * 1000;
 
 type OfferState = {

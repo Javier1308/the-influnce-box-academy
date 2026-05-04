@@ -15,8 +15,8 @@ const benefits = [
     desc: 'No teorías vacías. Cada principio viene respaldado por décadas de investigación científica y miles de estudios de campo con resultados comprobados.',
   },
   {
-    title: 'Metodología 100% práctica',
-    desc: 'Aprenderás haciendo. Las sesiones incluyen ejercicios, role plays y casos de estudio reales que puedes aplicar inmediatamente.',
+    title: 'Principios que cambian decisiones',
+    desc: 'Dominio de los 7 principios de Influencia que te darán una mejora significativa en tu nivel de éxito en cada interacción donde buscas influir para alcanzar un resultado favorable.',
   },
   {
     title: 'Certificado de nuestra Academia',
@@ -51,10 +51,10 @@ export default function Benefits() {
                 >
                   <CheckCircle className="text-brand-yellow mt-1 flex-shrink-0" size={22} />
                   <div>
-                    <h3 className="text-white font-semibold font-inter text-base mb-1">
+                    <h3 className="text-white font-semibold font-inter text-base mb-1 text-justify">
                       {b.title}
                     </h3>
-                    <p className="text-white/65 font-inter text-sm leading-relaxed">
+                    <p className="text-white/65 font-inter text-sm leading-relaxed text-justify">
                       {b.desc}
                     </p>
                   </div>
