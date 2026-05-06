@@ -11,7 +11,7 @@ import Badge3 from '../../assets/images/Badge3.png';
 
 // Pega aquí la URL del video cuando la tengas (YouTube embed o similar)
 // Ejemplo YouTube: 'https://www.youtube.com/embed/TU_ID_AQUI'
-const VIDEO_URL = '';
+const VIDEO_URL = 'https://www.youtube.com/embed/knx1wnA1xVg';
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
