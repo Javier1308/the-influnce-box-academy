@@ -5,6 +5,7 @@ import Button from '../ui/Button';
 import { HERO, WHATSAPP_LINKS } from '../../data/content';
 import { useCountdownOffer } from '../../hooks/useCountdownOffer';
 import FreddyImg from '../../assets/images/Freddy.jpeg';
+import VideoThumbnail from '../../assets/images/Miniatura.jpeg';
 import Badge1 from '../../assets/images/Badge1.png';
 import Badge2 from '../../assets/images/Badge2.png';
 import Badge3 from '../../assets/images/Badge3.png';
@@ -94,6 +95,7 @@ export default function Hero() {
           <video
             ref={videoRef}
             src={VIDEO_URL}
+            poster={VideoThumbnail}
             controls
             className="absolute inset-0 w-full h-full"
           />
