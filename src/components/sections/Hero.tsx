@@ -11,7 +11,7 @@ import Badge3 from '../../assets/images/Badge3.png';
 
 // Pega aquí la URL del video cuando la tengas (YouTube embed o similar)
 // Ejemplo YouTube: 'https://www.youtube.com/embed/TU_ID_AQUI'
-const VIDEO_URL = 'https://www.youtube.com/embed/knx1wnA1xVg';
+const VIDEO_URL = 'https://blue-access.net/TheInfluenceBox.mp4';
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -243,11 +243,10 @@ export default function Hero() {
 
               <div className="relative w-full rounded-2xl overflow-hidden border border-white/10 bg-black" style={{ aspectRatio: '16/9' }}>
                 {VIDEO_URL ? (
-                  <iframe
+                  <video
                     src={VIDEO_URL}
-                    title="Video The Influence Box Academy"
-                    allow="autoplay; fullscreen"
-                    allowFullScreen
+                    controls
+                    autoPlay
                     className="absolute inset-0 w-full h-full"
                   />
                 ) : (
