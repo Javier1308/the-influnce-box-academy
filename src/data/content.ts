@@ -15,7 +15,7 @@ export const HERO = {
     'Aprenderás a aplicar la psicología de la persuasión para que tu voz impacte, generes confianza al hablar y logres una efectividad superior al cerrar negocios.',
   subtitle:
     '¡Se más persuasivo en cualquier entorno, aprende las mejores estrategias sustentadas desde la ciencia!',
-  cta: '¡Mira el video de 8min!',
+  cta: '¡Mira el video de 6min!',
   badge: '',
   welcome:
     'Muchas gracias por tu interés en nuestros servicios de capacitaciones y asesorías, será un honor acompañarte en el desarrollo estratégico de tu influencia social y persuasión, con el objetivo de que generes resultados concretos en tu entorno profesional.',

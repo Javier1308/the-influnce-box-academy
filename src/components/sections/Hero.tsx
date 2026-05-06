@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { motion, AnimatePresence, type Variants } from 'framer-motion';
-import { Play, ChevronDown, X } from 'lucide-react';
+import { useRef } from 'react';
+import { motion, type Variants } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 import Button from '../ui/Button';
 import { HERO, WHATSAPP_LINKS } from '../../data/content';
 import { useCountdownOffer } from '../../hooks/useCountdownOffer';
@@ -19,8 +19,13 @@ const fadeUp: Variants = {
 };
 
 export default function Hero() {
-  const [videoOpen, setVideoOpen] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const offer = useCountdownOffer();
+
+  const handlePlayVideo = () => {
+    videoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    videoRef.current?.play();
+  };
 
   return (
     <section className="relative bg-brand-dark overflow-hidden">
@@ -72,7 +77,7 @@ export default function Hero() {
           transition={{ delay: 0.15 }}
           className="flex justify-center mt-8 mb-8"
         >
-          <Button variant="primary" href={WHATSAPP_LINKS.workshop} external className="text-base px-8 py-4">
+          <Button variant="primary" onClick={handlePlayVideo} className="text-base px-8 py-4">
             {HERO.cta}
           </Button>
         </motion.div>
@@ -86,18 +91,12 @@ export default function Hero() {
           className="relative w-full rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(242,190,27,0.08)] bg-black mb-6"
           style={{ aspectRatio: '16/9' }}
         >
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-brand-darker to-brand-dark">
-            <button
-              onClick={() => setVideoOpen(true)}
-              aria-label="Ver video de 8 minutos"
-              className="group flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-brand-yellow hover:scale-110 transition-transform shadow-[0_0_40px_rgba(242,190,27,0.5)] mb-4"
-            >
-              <Play className="text-black ml-1" size={36} fill="black" />
-            </button>
-            <p className="text-white/50 font-inter text-sm tracking-wide">
-              ▶ &nbsp;Video de 8 minutos — ¿Por qué The Influence Box Academy?
-            </p>
-          </div>
+          <video
+            ref={videoRef}
+            src={VIDEO_URL}
+            controls
+            className="absolute inset-0 w-full h-full"
+          />
         </motion.div>
 
         {/* ── 4. OFERTA + DESCARGA ── */}
@@ -215,51 +214,6 @@ export default function Hero() {
 
       </div>
 
-      {/* Modal de video */}
-      <AnimatePresence>
-        {videoOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 px-4"
-            onClick={() => setVideoOpen(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.92, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.92, opacity: 0 }}
-              transition={{ duration: 0.25, ease: 'easeOut' }}
-              className="relative w-full max-w-4xl"
-              onClick={e => e.stopPropagation()}
-            >
-              <button
-                onClick={() => setVideoOpen(false)}
-                className="absolute -top-10 right-0 text-white/60 hover:text-white transition-colors"
-                aria-label="Cerrar video"
-              >
-                <X size={28} />
-              </button>
-
-              <div className="relative w-full rounded-2xl overflow-hidden border border-white/10 bg-black" style={{ aspectRatio: '16/9' }}>
-                {VIDEO_URL ? (
-                  <video
-                    src={VIDEO_URL}
-                    controls
-                    autoPlay
-                    className="absolute inset-0 w-full h-full"
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-brand-darker to-brand-dark">
-                    <Play className="text-brand-yellow/30" size={48} />
-                    <p className="text-white/40 font-inter text-sm">Video próximamente</p>
-                  </div>
-                )}
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }
