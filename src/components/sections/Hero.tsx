@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import Button from '../ui/Button';
-import { HERO, WHATSAPP_LINKS } from '../../data/content';
+import { HERO } from '../../data/content';
 import { useCountdownOffer } from '../../hooks/useCountdownOffer';
 import FreddyImg from '../../assets/images/Freddy.jpeg';
 import VideoThumbnail from '../../assets/images/Miniatura.jpeg';
