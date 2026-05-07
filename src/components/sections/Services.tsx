@@ -1,13 +1,14 @@
 import { motion } from 'framer-motion';
 import { CheckCircle } from 'lucide-react';
-import { SERVICES, IMAGE_URLS } from '../../data/content';
+import { SERVICES } from '../../data/content';
 import CafeIcon from '../../assets/images/Cafe2D.png';
 import CafeYPersuasionIMG from '../../assets/images/CafeYPersuasionIMG.png';
 import ArquitecturaIMG from '../../assets/images/ArquitecturaDeInfluenciaIMG.png';
+import PartnerDePersuasionIMG from '../../assets/images/PartnerDePersuasionIMG.png';
 
 const easeOut = [0.25, 0.1, 0.25, 1.0] as [number, number, number, number];
 
-const serviceImages = [ArquitecturaIMG, IMAGE_URLS.workshops, CafeYPersuasionIMG];
+const serviceImages = [ArquitecturaIMG, PartnerDePersuasionIMG, CafeYPersuasionIMG];
 
 const serviceHighlights = [
   {
