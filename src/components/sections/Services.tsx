@@ -14,7 +14,7 @@ const serviceHighlights = [
   },
   {
     label: 'Diferencia Clave',
-    text: 'En cada sesión trabajaremos solo en ti, tus retos y tus objetivos, aplicando la Ciencia de la Persuasión de forma 100% personalizada para que logres más "sí" en cualquier contexto.',
+    text: 'Entiende cómo opera la mente humana para tomar decisiones, aplica cómo aplicar la psicología de la persuasión, sus principios, en ventas, negociaciones y conversaciones clave, ademas de ponerlas en práctica lo aprendido.',
   },
   {
     label: 'Ventaja Competitiva en ventas',
