@@ -7,7 +7,7 @@ export const WHATSAPP_LINKS = {
 };
 
 export const SOCIAL_LINKS = {
-  linkedin: 'https://linkedin.com/in/freddy-flórez-caldas/',
+  linkedin: 'https://www.linkedin.com/in/freddyfl%C3%B3rezcaldas/',
 };
 
 export const HERO = {
