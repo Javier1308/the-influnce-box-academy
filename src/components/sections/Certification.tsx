@@ -10,7 +10,7 @@ const fadeUp: Variants = {
 
 export default function Certification() {
   return (
-    <section className="bg-brand-darker py-10 md:py-16 px-4 md:px-8 lg:px-16">
+    <section className="bg-brand-dark py-10 md:py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
 
         {/* Top heading */}
@@ -61,7 +61,7 @@ export default function Certification() {
               </h2>
 
               <p className="text-white/70 font-inter text-xs md:text-sm leading-relaxed mb-3 text-justify">
-                A través de <span className="text-brand-yellow font-semibold">The Influence Box Academy</span> puedes aprender y obtener la certificación internacional más completa en persuasión ética, formada por el <span className="font-semibold text-white">Dr. Robert Cialdini</span> con una mejora continua económica sobre la inversión en la <span className="font-semibold text-white">CERTIFICACIÓN OFICIAL</span>, la cual en su página oficial alcanza los $1500.00.
+                A través de <span className="text-brand-yellow font-semibold">The Influence Box Academy</span> puedes aprender y obtener la certificación internacional más completa en persuasión ética, formada por el <span className="font-semibold text-white">Dr. Robert Cialdini</span> con una mejora continua económica sobre la inversión en la{' '}<a href="https://cialdini.com/certified-practitioner" target="_blank" rel="noopener noreferrer" className="font-semibold text-white hover:text-brand-yellow transition-colors underline underline-offset-2">CERTIFICACIÓN OFICIAL</a>, la cual en su página alcanza los $1500.00.
               </p>
 
               <p className="text-white/70 font-inter text-xs md:text-sm leading-relaxed mb-5 text-justify">

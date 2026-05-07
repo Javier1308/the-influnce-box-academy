@@ -6,6 +6,8 @@ import { HERO } from '../../data/content';
 import { useCountdownOffer } from '../../hooks/useCountdownOffer';
 import FreddyImg from '../../assets/images/Freddy.jpeg';
 import VideoThumbnail from '../../assets/images/Miniatura.jpeg';
+import BitacoraImg from '../../assets/images/Bitacora.png';
+import RelojLogo from '../../assets/images/RelojLogo.png';
 import Badge1 from '../../assets/images/Badge1.png';
 import Badge2 from '../../assets/images/Badge2.png';
 import Badge3 from '../../assets/images/Badge3.png';
@@ -114,9 +116,10 @@ export default function Hero() {
             <div className="flex flex-col items-center gap-2">
               <div className="inline-flex items-center gap-2 border border-brand-yellow text-brand-yellow text-xs font-semibold font-inter px-4 py-1.5 rounded-full bg-brand-yellow/10">
                 <span className="inline-block w-2 h-2 rounded-full bg-brand-yellow animate-pulse" />
-                ¡Oferta de bienvenida — 40% de descuento total!
+                ¡Aprovecha hoy el 40% de descuento total!
               </div>
-              <div className="flex items-center gap-1 text-white/80 font-inter text-sm">
+              <div className="flex items-center gap-2 text-white/80 font-inter text-sm">
+                <img src={RelojLogo} alt="" className="w-9 h-9 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(78%) sepia(85%) saturate(500%) hue-rotate(358deg) brightness(98%) contrast(95%)' }} />
                 <span>Expira en</span>
                 <span className="font-mono font-bold text-brand-yellow tabular-nums">
                   {offer.hours}:{offer.minutes}:{offer.seconds}
@@ -128,12 +131,11 @@ export default function Hero() {
           {/* Botón descarga + mensaje cyan */}
           <div className="flex flex-col items-center gap-2">
             <a
-              href={undefined}
-              download="Guia-de-Bolsillo-The-Influence-Box-Academy.pdf"
-              className="inline-flex items-center justify-center gap-2 border border-brand-yellow text-brand-yellow font-semibold font-inter text-base px-8 py-4 rounded-full opacity-50 cursor-not-allowed"
-              aria-disabled="true"
+              href={BitacoraImg}
+              download="Bitacora-7-Principios-The-Influence-Box-Academy.png"
+              className="inline-flex items-center justify-center gap-2 border border-brand-yellow text-brand-yellow font-semibold font-inter text-base px-8 py-4 rounded-full hover:bg-brand-yellow/10 hover:scale-105 transition-all duration-200"
             >
-              Descarga tu guía de bolsillo
+              Descarga tu bitácora
             </a>
             <span className="text-brand-cyan text-xs font-inter font-medium tracking-wide">
               — Sin costo —
@@ -153,7 +155,7 @@ export default function Hero() {
           {/* Label BIENVENIDOS con líneas */}
           <div className="flex items-center justify-center gap-4 mb-8">
             <span className="flex-1 max-w-[80px] h-px bg-brand-cyan/60" />
-            <span className="text-brand-cyan text-xs font-bold tracking-widest uppercase">
+            <span className="text-brand-cyan text-xl font-bold tracking-widest uppercase">
               Bienvenidos
             </span>
             <span className="flex-1 max-w-[80px] h-px bg-brand-cyan/60" />
@@ -162,7 +164,7 @@ export default function Hero() {
           {/* Cita centrada */}
           <p
             className="text-white/90 text-xl sm:text-2xl md:text-3xl leading-relaxed text-center max-w-3xl mx-auto mb-10"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             "{HERO.welcome}"
           </p>
@@ -194,10 +196,10 @@ export default function Hero() {
               </div>
 
               {/* Badges de certificación */}
-              <div className="hidden sm:flex items-center gap-3 ml-2">
-                <img src={Badge1} alt="Certificación Cialdini 1" className="h-24 w-auto object-contain" />
-                <img src={Badge2} alt="Certificación Cialdini 2" className="h-24 w-auto object-contain" />
-                <img src={Badge3} alt="Certificación Cialdini 3" className="h-24 w-auto object-contain" />
+              <div className="hidden sm:flex items-center justify-center gap-3 ml-2">
+                <img src={Badge1} alt="Certificación Cialdini 1" className="w-24 h-24 object-contain" />
+                <img src={Badge2} alt="Certificación Cialdini 2" className="w-24 h-24 object-contain" />
+                <img src={Badge3} alt="Certificación Cialdini 3" className="w-24 h-24 object-contain" />
               </div>
             </div>
           </div>

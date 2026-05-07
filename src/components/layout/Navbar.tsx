@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import Button from '../ui/Button';
 import { WHATSAPP_LINKS } from '../../data/content';
-import Logo from '../../assets/images/LogoSolo.png';
+import Logo from '../../assets/images/LogoTIBAHorizontal.png';
 
 export default function Navbar() {
   return (
@@ -16,7 +16,7 @@ export default function Navbar() {
           <img
             src={Logo}
             alt="The Influence Box Academy"
-            className="h-12 md:h-16 w-auto object-contain flex-shrink-0"
+            className="h-[43px] md:h-[58px] w-auto object-contain flex-shrink-0"
           />
         </a>
 

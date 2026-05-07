@@ -33,7 +33,7 @@ export default function SectionTitle({
     <div className={`mb-8 ${alignment}`}>
       <h2
         className="font-playfair font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-tight"
-        style={{ fontFamily: "'Playfair Display', serif" }}
+        style={{ fontFamily: "'Montserrat', sans-serif" }}
       >
         {renderTitle()}
       </h2>

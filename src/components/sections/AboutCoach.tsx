@@ -15,7 +15,7 @@ const easeOut = [0.25, 0.1, 0.25, 1.0] as [number, number, number, number];
 
 export default function AboutCoach() {
   return (
-    <section id="coach" className="bg-brand-dark py-10 md:py-16 px-4 md:px-8 lg:px-16">
+    <section id="coach" className="bg-brand-darker py-10 md:py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
 
@@ -38,7 +38,7 @@ export default function AboutCoach() {
             </span>
 
             {/* Name */}
-            <h3 className="font-bold text-2xl sm:text-3xl text-white mb-4">
+            <h3 className="font-bold text-2xl sm:text-3xl text-white mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
               {COACH.name}
             </h3>
 

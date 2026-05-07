@@ -36,7 +36,7 @@ export default function GiftOffer() {
 
           <h2
             className="font-bold text-xl sm:text-2xl md:text-3xl text-white mb-4"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             Un regalo especial para ti
           </h2>

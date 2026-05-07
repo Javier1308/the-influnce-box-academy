@@ -82,6 +82,7 @@ export default function Benefits() {
             />
           </motion.div>
         </div>
+
       </div>
     </section>
   );

@@ -1,6 +1,5 @@
 import { motion, type Variants } from 'framer-motion';
 import { Users, TrendingUp, Megaphone, MessageCircle, ShoppingBag, Heart } from 'lucide-react';
-import SectionTitle from '../ui/SectionTitle';
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -27,12 +26,20 @@ export default function WhyInfluence() {
             whileInView="visible"
             viewport={{ once: true, margin: '-80px' }}
           >
-            <SectionTitle
-              title="¿Por qué aprender sobre Persuasión e Influencia social?"
-              highlight="Persuasión e Influencia social"
-              subtitle="La capacidad de influir es la habilidad #1 más demandada por empresas y líderes del mundo. No importa tu industria — quien influye, lidera."
-              justify
-            />
+            <div className="mb-8">
+              <h2
+                className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-tight"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                ¿Por qué aprender sobre <span className="text-brand-yellow">Persuasión</span>{' '}
+                <span className="text-white">e</span>{' '}
+                <span className="text-brand-yellow">Influencia social</span>
+                <span className="text-brand-yellow">?</span>
+              </h2>
+              <p className="mt-4 text-white/70 font-inter text-base md:text-lg max-w-2xl text-justify">
+                La capacidad de influir es la habilidad #1 más demandada por empresas y líderes del mundo. No importa tu industria — quien influye, lidera.
+              </p>
+            </div>
             <p className="text-white/70 font-inter text-sm md:text-base leading-relaxed mt-4 text-justify">
               La ciencia de la persuasión del Dr. Robert Cialdini lleva más de 40 años de investigación. Sus principios están detrás de las decisiones más importantes que se toman en el mundo empresarial, político y personal.
             </p>
@@ -46,7 +53,7 @@ export default function WhyInfluence() {
             <div className="flex items-center gap-3 mb-4">
               <span className="flex-1 h-px bg-brand-yellow/60" />
               <span className="text-brand-yellow text-xs font-semibold font-inter uppercase tracking-widest whitespace-nowrap">
-                Impulsar el éxito en otras áreas de negocio
+                Impulsa el éxito en otras áreas de negocio
               </span>
               <span className="flex-1 h-px bg-brand-yellow/60" />
             </div>
