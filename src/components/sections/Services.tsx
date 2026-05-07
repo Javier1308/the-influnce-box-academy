@@ -2,15 +2,17 @@ import { motion } from 'framer-motion';
 import { CheckCircle } from 'lucide-react';
 import { SERVICES, IMAGE_URLS } from '../../data/content';
 import CafeIcon from '../../assets/images/Cafe2D.png';
+import CafeYPersuasionIMG from '../../assets/images/CafeYPersuasionIMG.png';
+import ArquitecturaIMG from '../../assets/images/ArquitecturaDeInfluenciaIMG.png';
 
 const easeOut = [0.25, 0.1, 0.25, 1.0] as [number, number, number, number];
 
-const serviceImages = [IMAGE_URLS.coaching, IMAGE_URLS.workshops, IMAGE_URLS.breakfast];
+const serviceImages = [ArquitecturaIMG, IMAGE_URLS.workshops, CafeYPersuasionIMG];
 
 const serviceHighlights = [
   {
     label: 'Diferencia Clave',
-    text: 'Aquí no hay teoría genérica; todo lo que aprendes lo aplicamos sobre tus retos reales, con seguimiento personalizado para que avances más rápido que en cualquier capacitación grupal.',
+    text: 'Entenderás como opera la mente humana para tomar decisiones, sabrás como aplicar la psicología de la persuasión, sus principios, en ventas, negociaciones y conversaciones clave, además pondrás en práctica lo aprendido.',
   },
   {
     label: 'Diferencia Clave',
@@ -23,7 +25,7 @@ const serviceHighlights = [
 ];
 
 const serviceContactTexts = [
-  'Contáctanos y empieza a convertir conversaciones en oportunidades',
+  'Contáctanos y transforma cada conversación en una oportunidad de influencia y resultados.',
   'Contáctanos y empieza a convertir conversaciones en oportunidades',
   'Conversemos y empieza a convertir interacciones en oportunidades reales.',
 ];

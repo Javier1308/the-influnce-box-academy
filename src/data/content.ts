@@ -69,16 +69,16 @@ export const SERVICES = [
   {
     badge: 'Para aprender haciendo',
     title: 'Arquitectura de Influencia',
-    subtitle: 'Presencial',
+    subtitle: 'Persuasión con Dinámicas estratégicas',
     description:
       'Recibirás los conceptos más relevantes de la ciencia de la persuasión. Conocerás los Small-Bigs: pequeños cambios que traen grandes resultados.',
     benefits: [
       'Acceso a información exclusiva, no disponible en libros.',
       'Activadores y amplificadores de cada principio de influencia.',
-      '4 workshops de 2 hrs en grupos de máx. 10 personas.',
       'Casos de estudio con respaldo científico.',
+      '8 sesiones de 1hr. y 30min en grupos de máx 12 personas.',
     ],
-    cta: 'Siguiente Workshop',
+    cta: 'Reservar participación',
     ctaLink: 'https://wa.link/twiqg6',
     testimonial: {
       text: 'Las cuatro sesiones con Freddy fueron intensas, claras y totalmente aplicables. Aprendí cómo usar los 7 principios de influencia de forma ética y estratégica.',
@@ -113,8 +113,9 @@ export const SERVICES = [
       'Dirigido a profesionales en ambiente colaborativo.',
       'Ejemplos del mundo corporativo real.',
       'Cubre uno a uno los 7 principios universales de influencia.',
+      '7 sesiones de 1hr. y 30min en grupos de máx 12 personas.',
     ],
-    cta: 'Más información',
+    cta: 'Reservar Participación',
     ctaLink: 'https://wa.link/nw5e72',
   },
 ];
