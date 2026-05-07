@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { CheckCircle } from 'lucide-react';
 import { SERVICES, IMAGE_URLS } from '../../data/content';
+import CafeIcon from '../../assets/images/Cafe2D.png';
 
 const easeOut = [0.25, 0.1, 0.25, 1.0] as [number, number, number, number];
 
@@ -29,7 +30,7 @@ const serviceContactTexts = [
 
 export default function Services() {
   return (
-    <section id="services" className="bg-brand-dark py-16 px-4 md:px-8 lg:px-16">
+    <section id="services" className="bg-brand-darker py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
 
         {/* Título */}
@@ -63,38 +64,45 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.6, ease: easeOut, delay: 0.05 }}
-                className="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03]"
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-4`}
               >
-                <div className={`grid grid-cols-1 lg:grid-cols-2 ${imageLeft ? 'lg:grid-flow-dense' : ''}`}>
 
-                  {/* Columna de contenido */}
-                  <div
-                    className={`p-7 md:p-9 flex flex-col gap-4 ${imageLeft ? 'lg:col-start-2' : ''}`}
-                    style={{ fontFamily: "'Montserrat', sans-serif" }}
-                  >
-                    {/* Badge */}
-                    <span className="inline-block border border-brand-cyan/50 text-brand-cyan text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-sm w-fit">
-                      {service.badge}
-                    </span>
+                {/* Card de imagen */}
+                <div className={`relative rounded-2xl overflow-hidden min-h-[280px] lg:min-h-[420px] border border-white/10 ${imageLeft ? 'lg:order-1' : 'lg:order-2'}`}>
+                  <img
+                    src={serviceImages[i]}
+                    alt={service.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                </div>
 
-                    {/* Título + subtítulo */}
-                    <div>
-                      <h3 className="font-bold text-2xl sm:text-3xl text-white leading-tight mb-1">
-                        {service.title}
-                      </h3>
-                      <p className="text-brand-yellow text-sm font-semibold">
-                        {service.subtitle}
-                      </p>
-                    </div>
+                {/* Card de contenido */}
+                <div
+                  className={`rounded-2xl border border-white/10 bg-white/[0.03] p-7 md:p-9 flex flex-col gap-4 ${imageLeft ? 'lg:order-2' : 'lg:order-1'}`}
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  {/* Badge */}
+                  <span className="inline-block border border-brand-cyan/50 text-brand-cyan text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-sm w-fit">
+                    {service.badge}
+                  </span>
 
-                    {/* Descripción */}
+                  {/* Título + subtítulo */}
+                  <div>
+                    <h3 className="font-bold text-2xl sm:text-3xl text-white leading-tight mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>
+                      {service.title}
+                    </h3>
+                    <p className="text-brand-yellow text-sm font-semibold">
+                      {service.subtitle}
+                    </p>
+                  </div>
+
+                  {/* Descripción + bullets */}
+                  <div className="flex flex-col gap-3">
                     <p className="text-white/70 text-sm leading-relaxed text-justify">
                       {service.description}
                     </p>
-
-                    {/* Benefits */}
                     <div className="flex flex-col gap-2">
-                      <p className="text-white/40 text-[10px] uppercase tracking-widest">Lo que recibirás:</p>
                       {service.benefits.map((b) => (
                         <div key={b} className="flex items-start gap-2">
                           <CheckCircle size={15} className="text-brand-yellow mt-0.5 flex-shrink-0" />
@@ -102,45 +110,33 @@ export default function Services() {
                         </div>
                       ))}
                     </div>
-
-                    {/* Highlight box */}
-                    <div className="bg-brand-yellow/10 border border-brand-yellow/30 rounded-xl p-4">
-                      <p className="text-brand-yellow text-xs font-bold uppercase tracking-wider mb-1">
-                        {highlight.label}
-                      </p>
-                      <p className="text-white/80 text-xs leading-relaxed text-justify">
-                        {highlight.text}
-                      </p>
-                    </div>
-
-                    {/* Contacto + CTA */}
-                    <div className="flex flex-col gap-3 pt-1">
-                      <p className="text-white/50 text-xs">{contactText}</p>
-                      <a
-                        href={service.ctaLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 bg-brand-yellow text-black font-bold text-sm px-6 py-3 rounded-full hover:bg-brand-yellow/90 transition-colors w-fit"
-                      >
-                        {service.cta}
-                      </a>
-                    </div>
                   </div>
 
-                  {/* Imagen */}
-                  <div className={`relative min-h-[280px] lg:min-h-0 ${imageLeft ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
-                    <img
-                      src={serviceImages[i]}
-                      alt={service.title}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                    <div className={`absolute inset-0 ${imageLeft
-                      ? 'bg-gradient-to-r from-transparent to-brand-dark/60'
-                      : 'bg-gradient-to-l from-transparent to-brand-dark/60'}`}
-                    />
+                  {/* Highlight box */}
+                  <div className="bg-brand-yellow/10 border border-brand-yellow/30 rounded-xl p-4 flex flex-col gap-2">
+                    <p className="text-brand-yellow text-xs font-bold uppercase tracking-wider">
+                      {highlight.label}
+                    </p>
+                    <p className="text-white/80 text-xs leading-relaxed text-justify">
+                      {highlight.text}
+                    </p>
                   </div>
 
+                  {/* Contacto + CTA */}
+                  <div className="flex flex-col gap-3 pt-1 mt-auto">
+                    <p className="text-white/50 text-xs">{contactText}</p>
+                    <a
+                      href={service.ctaLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 bg-brand-yellow text-black font-bold text-sm px-6 py-3 rounded-full hover:bg-brand-yellow/90 transition-colors w-fit"
+                    >
+                      {i === 2 && <img src={CafeIcon} alt="" className="w-6 h-6 object-contain flex-shrink-0" />}
+                      {service.cta}
+                    </a>
+                  </div>
                 </div>
+
               </motion.div>
             );
           })}
