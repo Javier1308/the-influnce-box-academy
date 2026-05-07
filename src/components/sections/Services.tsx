@@ -14,7 +14,7 @@ const serviceHighlights = [
   },
   {
     label: 'Diferencia Clave',
-    text: 'Entiende cómo opera la mente humana para tomar decisiones, aplica cómo aplicar la psicología de la persuasión, sus principios, en ventas, negociaciones y conversaciones clave, ademas de ponerlas en práctica lo aprendido.',
+    text: 'Aquí no hay teoría genérica; todo lo que aprendes lo aplicamos sobre tus retos reales, con seguimiento personalizado para que avances más rápido que en cualquier capacitación grupal.',
   },
   {
     label: 'Ventaja Competitiva en ventas',
