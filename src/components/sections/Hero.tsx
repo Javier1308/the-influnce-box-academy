@@ -11,6 +11,7 @@ import RelojLogo from '../../assets/images/RelojLogo.png';
 import Badge1 from '../../assets/images/Badge1.png';
 import Badge2 from '../../assets/images/Badge2.png';
 import Badge3 from '../../assets/images/Badge3.png';
+import ErlenmeyerPattern from '../../assets/images/erlenmeyer-pattern.svg';
 
 // Pega aquí la URL del video cuando la tengas (YouTube embed o similar)
 // Ejemplo YouTube: 'https://www.youtube.com/embed/TU_ID_AQUI'
@@ -47,6 +48,16 @@ export default function Hero() {
         style={{
           background:
             'radial-gradient(ellipse at 50% 0%, rgba(242,190,27,0.08) 0%, transparent 65%)',
+        }}
+      />
+      {/* Erlenmeyer mosaic watermark */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.06]"
+        style={{
+          backgroundImage: `url(${ErlenmeyerPattern})`,
+          backgroundSize: '240px 160px',
+          backgroundRepeat: 'repeat',
+          filter: 'invert(1) sepia(1) saturate(3) hue-rotate(5deg) brightness(1.2)',
         }}
       />
 
