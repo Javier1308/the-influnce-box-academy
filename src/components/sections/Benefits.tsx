@@ -38,6 +38,7 @@ export default function Benefits() {
             <SectionTitle
               title="Lo que obtienes con nosotros"
               highlight="obtienes"
+              centeredMobileOnly
             />
             <div className="flex flex-col gap-6 mt-6">
               {benefits.map((b, i) => (
@@ -61,7 +62,7 @@ export default function Benefits() {
                 </motion.div>
               ))}
             </div>
-            <div className="mt-8">
+            <div className="mt-8 flex md:block justify-center">
               <Button variant="primary" href={WHATSAPP_LINKS.workshop} external>
                 Quiero empezar ahora
               </Button>

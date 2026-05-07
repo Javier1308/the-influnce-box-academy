@@ -28,7 +28,7 @@ export default function WhyInfluence() {
           >
             <div className="mb-8">
               <h2
-                className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-tight"
+                className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-tight text-center md:text-left"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 ¿Por qué aprender sobre <span className="text-brand-yellow">Persuasión</span>{' '}
@@ -40,10 +40,10 @@ export default function WhyInfluence() {
                 La capacidad de influir es la habilidad #1 más demandada por empresas y líderes del mundo. No importa tu industria — quien influye, lidera.
               </p>
             </div>
-            <p className="text-white/70 font-inter text-sm md:text-base leading-relaxed mt-4 text-justify">
+            <p className="text-white/70 font-inter text-base md:text-lg leading-relaxed mt-4 text-justify">
               La ciencia de la persuasión del Dr. Robert Cialdini lleva más de 40 años de investigación. Sus principios están detrás de las decisiones más importantes que se toman en el mundo empresarial, político y personal.
             </p>
-            <p className="text-white/70 font-inter text-sm md:text-base leading-relaxed mt-3 text-justify">
+            <p className="text-white/70 font-inter text-base md:text-lg leading-relaxed mt-3 text-justify">
               En The Influence Box Academy te enseñamos a aplicarlos de forma{' '}
               <span className="text-brand-yellow font-semibold">ética, estratégica y efectiva</span>.
             </p>

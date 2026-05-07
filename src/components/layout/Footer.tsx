@@ -43,18 +43,18 @@ export default function Footer() {
   return (
     <footer className="bg-brand-dark border-t border-white/10">
       {/* Main footer body */}
-      <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-16 py-12 md:py-16 flex flex-col md:flex-row items-start justify-between gap-12">
+      <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-16 py-10 md:py-16 flex flex-col md:flex-row items-start justify-between gap-8 md:gap-12">
 
         {/* LEFT: Logo image (already contains brand text) + contact + social */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 items-center md:items-start w-full md:w-auto">
           <img
             src={LogoSolo}
             alt="The Influence Box Academy"
-            className="w-56 md:w-64 object-contain"
+            className="w-48 sm:w-56 md:w-64 object-contain"
           />
 
           {/* Contact info */}
-          <div className="flex flex-col gap-2 text-sm text-white/55 font-inter">
+          <div className="flex flex-col gap-2 text-sm text-white/55 font-inter items-center md:items-start">
             <a
               href="mailto:academy@theinfluencebox.com"
               className="flex items-center gap-2 hover:text-white/80 transition-colors"
@@ -103,11 +103,28 @@ export default function Footer() {
               <LinkedinIcon size={20} />
             </a>
           </div>
+
+          {/* Tagline + swoosh — mobile only, below social icons */}
+          <div className="flex items-center justify-center gap-3 md:hidden w-full">
+            <div className="flex flex-col" style={{ lineHeight: 1.1 }}>
+              <p className="text-xl text-white/80 italic font-light font-inter">
+                ...más rápido,
+              </p>
+              <p className="text-xl text-brand-cyan italic font-light font-inter">
+                donde quieras estar
+              </p>
+            </div>
+            <img
+              src={Swoosh}
+              alt=""
+              aria-hidden="true"
+              className="w-20 object-contain flex-shrink-0"
+            />
+          </div>
         </div>
 
-        {/* RIGHT: Tagline + swoosh */}
-        <div className="flex items-center justify-center md:self-center gap-4">
-          {/* Text lines */}
+        {/* RIGHT: Tagline + swoosh — desktop only */}
+        <div className="hidden md:flex items-center justify-center md:self-center gap-4">
           <div className="flex flex-col" style={{ lineHeight: 1.1 }}>
             <p className="text-3xl md:text-4xl text-white/80 italic font-light font-inter">
               ...más rápido,
@@ -116,7 +133,6 @@ export default function Footer() {
               donde quieras estar
             </p>
           </div>
-          {/* Swoosh centered between the two lines */}
           <img
             src={Swoosh}
             alt=""

@@ -25,7 +25,7 @@ export default function FinalCTA() {
           transition={{ duration: 0.6, ease: easeOut }}
           className="flex flex-col items-center gap-6"
         >
-          <div className="flex flex-col sm:flex-row gap-4 mt-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 mt-4 w-full sm:w-auto items-center">
             <Button
               variant="outline"
               href={SOCIAL_LINKS.linkedin}

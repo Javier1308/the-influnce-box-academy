@@ -21,7 +21,7 @@ export default function AboutCialdini() {
           className="text-center mb-10"
           style={{ fontFamily: "'Montserrat', sans-serif" }}
         >
-          <h2 className="font-bold text-xl sm:text-2xl md:text-3xl text-white leading-tight whitespace-nowrap">
+          <h2 className="font-bold text-xl sm:text-2xl md:text-3xl text-white leading-tight">
             Te presentamos a la mente{' '}
             <span className="text-brand-yellow">detrás de la fuente</span>
           </h2>
@@ -89,7 +89,7 @@ export default function AboutCialdini() {
               Su best seller es considerado y recomendado por líderes como:
             </p>
 
-            <div className="flex flex-wrap gap-2 mb-6">
+            <div className="flex flex-wrap gap-2 mb-6 lg:justify-start justify-center">
               {CIALDINI.endorsedBy.map((name) => (
                 <span
                   key={name}
@@ -102,17 +102,19 @@ export default function AboutCialdini() {
             </div>
 
             {/* Apartado del libro — sin imagen */}
-            <p className="text-white/60 text-xs leading-relaxed mb-3 text-justify">
+            <p className="text-white/60 text-xs leading-relaxed mb-3 lg:text-left text-center">
               Considerado como el mejor libro de negocios de todos los tiempos. De acuerdo al Sitio Financiero:
             </p>
-            <a
-              href="https://www.thewaystowealth.com/make-money/best-business-books/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 border border-brand-yellow/60 text-brand-yellow text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-brand-yellow/10 transition-colors"
-            >
-              "The Ways to Wealth" ↗
-            </a>
+            <div className="lg:flex lg:justify-start flex justify-center">
+              <a
+                href="https://www.thewaystowealth.com/make-money/best-business-books/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 border border-brand-yellow/60 text-brand-yellow text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-brand-yellow/10 transition-colors"
+              >
+                "The Ways to Wealth" ↗
+              </a>
+            </div>
           </motion.div>
 
         </div>

@@ -171,7 +171,7 @@ export default function Hero() {
 
           {/* Firma: foto circular + nombre + badges — caja oscura */}
           <div className="flex justify-center">
-            <div className="flex items-center gap-5 bg-black/40 rounded-2xl px-6 py-4 shadow-[0_4px_24px_rgba(0,0,0,0.5)]">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-5 bg-black/40 rounded-2xl px-4 sm:px-6 py-4 shadow-[0_4px_24px_rgba(0,0,0,0.5)] w-full sm:w-auto justify-center sm:justify-start">
               {/* Foto circular */}
               <div className="relative flex-shrink-0">
                 <div className="absolute -inset-0.5 rounded-full bg-gradient-to-br from-brand-yellow/40 to-brand-cyan/20 blur" />
@@ -196,10 +196,10 @@ export default function Hero() {
               </div>
 
               {/* Badges de certificación */}
-              <div className="hidden sm:flex items-center justify-center gap-3 ml-2">
-                <img src={Badge1} alt="Certificación Cialdini 1" className="w-24 h-24 object-contain" />
-                <img src={Badge2} alt="Certificación Cialdini 2" className="w-24 h-24 object-contain" />
-                <img src={Badge3} alt="Certificación Cialdini 3" className="w-24 h-24 object-contain" />
+              <div className="flex items-center justify-center gap-2 mt-2 sm:mt-0 sm:ml-2">
+                <img src={Badge1} alt="Certificación Cialdini 1" className="w-14 h-14 sm:w-24 sm:h-24 object-contain" />
+                <img src={Badge2} alt="Certificación Cialdini 2" className="w-14 h-14 sm:w-24 sm:h-24 object-contain" />
+                <img src={Badge3} alt="Certificación Cialdini 3" className="w-14 h-14 sm:w-24 sm:h-24 object-contain" />
               </div>
             </div>
           </div>

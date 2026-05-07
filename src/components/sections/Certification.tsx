@@ -36,7 +36,7 @@ export default function Certification() {
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
           transition={{ delay: 0.1 }}
-          className="relative rounded-3xl overflow-hidden border border-brand-cyan/20 shadow-[0_0_60px_rgba(95,197,227,0.08)] bg-gradient-to-br from-brand-cyan/5 to-transparent p-5 sm:p-8 md:p-10"
+          className="relative rounded-3xl overflow-hidden border border-brand-cyan/20 shadow-[0_0_60px_rgba(95,197,227,0.08)] bg-gradient-to-br from-brand-cyan/5 to-transparent p-4 sm:p-8 md:p-10"
         >
           <div className="absolute top-4 right-4 border border-dashed border-brand-cyan/20 rounded-2xl inset-4 pointer-events-none" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
@@ -85,9 +85,11 @@ export default function Certification() {
                 Por si deseas dar un paso más y acreditar formalmente lo que ya dominas.
               </p>
 
-              <Button variant="primary" href={WHATSAPP_LINKS.workshop} external>
-                Certificado Internacional
-              </Button>
+              <div className="lg:flex lg:justify-start flex justify-center">
+                <Button variant="primary" href={WHATSAPP_LINKS.workshop} external>
+                  Certificado Internacional
+                </Button>
+              </div>
             </div>
 
             {/* Right: image — larger */}

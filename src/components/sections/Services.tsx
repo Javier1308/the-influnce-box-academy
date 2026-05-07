@@ -70,7 +70,7 @@ export default function Services() {
               >
 
                 {/* Card de imagen */}
-                <div className={`relative rounded-2xl overflow-hidden min-h-[280px] lg:min-h-[420px] border border-white/10 ${imageLeft ? 'lg:order-1' : 'lg:order-2'}`}>
+                <div className={`relative rounded-2xl overflow-hidden min-h-[220px] sm:min-h-[280px] lg:min-h-[420px] border border-white/10 ${imageLeft ? 'lg:order-1' : 'lg:order-2'}`}>
                   <img
                     src={serviceImages[i]}
                     alt={service.title}
@@ -81,7 +81,7 @@ export default function Services() {
 
                 {/* Card de contenido */}
                 <div
-                  className={`rounded-2xl border border-white/10 bg-white/[0.03] p-7 md:p-9 flex flex-col gap-4 ${imageLeft ? 'lg:order-2' : 'lg:order-1'}`}
+                  className={`rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:p-7 md:p-9 flex flex-col gap-4 ${imageLeft ? 'lg:order-2' : 'lg:order-1'}`}
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
                   {/* Badge */}
@@ -125,8 +125,8 @@ export default function Services() {
                   </div>
 
                   {/* Contacto + CTA */}
-                  <div className="flex flex-col gap-3 pt-1 mt-auto">
-                    <p className="text-white/50 text-xs">{contactText}</p>
+                  <div className="flex flex-col gap-3 pt-1 mt-auto items-center lg:items-start">
+                    <p className="text-white/50 text-xs text-center lg:text-left">{contactText}</p>
                     <a
                       href={service.ctaLink}
                       target="_blank"

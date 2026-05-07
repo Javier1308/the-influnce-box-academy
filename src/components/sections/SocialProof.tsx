@@ -58,34 +58,34 @@ export default function SocialProof() {
               <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-0">
 
                 {/* Logo */}
-                <div className="flex items-center justify-center p-6 md:p-8 border-b md:border-b-0 md:border-r border-white/10" style={{ backgroundColor: s.logoBg }}>
-                  <img src={s.logo} alt={s.logoAlt} className="w-48 h-48 object-contain rounded-xl" />
+                <div className="flex items-center justify-center p-4 sm:p-6 md:p-8 border-b md:border-b-0 md:border-r border-white/10" style={{ backgroundColor: s.logoBg }}>
+                  <img src={s.logo} alt={s.logoAlt} className="w-28 h-28 sm:w-40 sm:h-40 md:w-48 md:h-48 object-contain rounded-xl" />
                 </div>
 
                 {/* Datos principales */}
-                <div className="flex flex-col gap-4 p-8" style={font}>
+                <div className="flex flex-col gap-3 p-5 sm:p-8" style={font}>
                   <div>
-                    <p className="text-brand-cyan text-2xl font-bold uppercase tracking-wider">{s.source}</p>
-                    <p className="text-white/40 text-sm mt-1">· {s.report}</p>
+                    <p className="text-brand-cyan text-base sm:text-xl md:text-2xl font-bold uppercase tracking-wider">{s.source}</p>
+                    <p className="text-white/40 text-xs sm:text-sm mt-1">· {s.report}</p>
                   </div>
-                  <p className="text-white/70 text-lg font-bold">
+                  <p className="text-white/70 text-sm sm:text-base md:text-lg font-bold">
                     {s.timeLabel} {s.timeHighlight}...
                   </p>
-                  <p className="text-white/80 text-lg leading-relaxed">
-                    La <span className="text-brand-yellow font-bold text-2xl">Influencia Social</span> es una de las habilidades más demandadas a nivel global, y es una habilidad crítica e indispensable para el crecimiento sostenible de la Empresa.
+                  <p className="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed">
+                    La <span className="text-brand-yellow font-bold text-base sm:text-xl md:text-2xl">Influencia Social</span> es una de las habilidades más demandadas a nivel global, y es una habilidad crítica e indispensable para el crecimiento sostenible de la Empresa.
                   </p>
                 </div>
 
                 {/* Botón derecha */}
-                <div className="flex items-center justify-center px-8 border-t md:border-t-0 md:border-l border-white/10">
+                <div className="flex items-center justify-center px-4 sm:px-8 py-4 md:py-0 border-t md:border-t-0 md:border-l border-white/10">
                   <a
                     href={s.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 border-2 border-brand-yellow rounded-full px-6 py-3 hover:bg-brand-yellow/10 transition-colors whitespace-nowrap"
+                    className="inline-flex items-center gap-2 sm:gap-3 border-2 border-brand-yellow rounded-full px-4 sm:px-6 py-2.5 sm:py-3 hover:bg-brand-yellow/10 transition-colors whitespace-nowrap"
                   >
-                    <span className="text-brand-yellow font-black text-2xl">{s.rank}</span>
-                    <span className="text-brand-cyan text-lg">↗</span>
+                    <span className="text-brand-yellow font-black text-lg sm:text-2xl">{s.rank}</span>
+                    <span className="text-brand-cyan text-base sm:text-lg">↗</span>
                   </a>
                 </div>
 

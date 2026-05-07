@@ -26,7 +26,7 @@ export default function GiftOffer() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
-          className="border-2 border-brand-yellow/30 rounded-3xl bg-brand-yellow/5 p-5 sm:p-8 md:p-12 text-center shadow-[0_0_40px_rgba(242,190,27,0.1)]"
+          className="border-2 border-brand-yellow/30 rounded-3xl bg-brand-yellow/5 p-5 sm:p-8 md:p-12 text-center shadow-[0_0_40px_rgba(242,190,27,0.1)] mx-0"
         >
           <div className="flex justify-center mb-4">
             <div className="w-14 h-14 rounded-full bg-brand-yellow/20 flex items-center justify-center">
@@ -45,7 +45,7 @@ export default function GiftOffer() {
             {GIFT.message}
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 bg-brand-dark border border-brand-yellow/40 rounded-xl px-4 sm:px-6 py-4 mb-6 w-full sm:w-auto">
+          <div className="flex flex-col items-center justify-center gap-2 bg-brand-dark border border-brand-yellow/40 rounded-xl px-4 py-4 mb-6 w-full sm:w-auto sm:flex-row sm:gap-3 sm:px-6">
             <span className="text-white/60 font-inter text-sm">Tu código de descuento:</span>
             <div className="flex items-center gap-3">
               <code className="text-brand-yellow font-mono font-bold text-xl tracking-widest">

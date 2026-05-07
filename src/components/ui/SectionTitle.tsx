@@ -3,6 +3,7 @@ type SectionTitleProps = {
   highlight?: string;
   subtitle?: string;
   centered?: boolean;
+  centeredMobileOnly?: boolean;
   justify?: boolean;
 };
 
@@ -11,9 +12,14 @@ export default function SectionTitle({
   highlight,
   subtitle,
   centered = false,
+  centeredMobileOnly = false,
   justify = false,
 }: SectionTitleProps) {
-  const alignment = centered ? 'text-center' : 'text-left';
+  const alignment = centered
+    ? 'text-center'
+    : centeredMobileOnly
+      ? 'text-center md:text-left'
+      : 'text-left';
 
   const renderTitle = () => {
     if (!highlight) {
