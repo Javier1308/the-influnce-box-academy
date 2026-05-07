@@ -93,10 +93,10 @@ export const SERVICES = [
     description:
       'En cada sesión trabajaremos solo en ti, tus retos y tus objetivos, aplicando la Ciencia de la Persuasión de forma 100% personalizada para que logres más "sí" en cualquier contexto.',
     benefits: [
-      'Acceso a información exclusiva, no disponible en libros.',
-      'Activadores y amplificadores de cada principio de influencia.',
-      '8 sesiones individuales de 3 hrs.',
-      'Sin teoría genérica: todo aplicado sobre tus retos reales.',
+      'Ingeniería psicológica detrás de la persuasión humana aplicada a escenarios reales.',
+      'Aplicación estratégica de los 7 principios de influencia en comunicación, liderazgo y ventas.',
+      'Corrección personalizada de patrones que hoy están reduciendo tu capacidad de influir.',
+      '8 sesiones de 1hr. y 30min en grupos de máx 12 personas.',
     ],
     cta: 'Agendar sesión de coaching',
     ctaLink: 'https://wa.link/xxregs',
