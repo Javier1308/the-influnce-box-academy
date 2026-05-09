@@ -44,12 +44,19 @@ export default function CurriculumB2B() {
                 >
                   {item.session}
                 </span>
-                {item.exclusiveDiamond && (
+                {item.exclusiveDiamond ? (
                   <span
                     className="text-[9px] font-bold text-brand-yellow border border-brand-yellow/40 rounded-full px-2 py-0.5 uppercase tracking-wider"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                   >
                     💎 Diamond
+                  </span>
+                ) : (
+                  <span
+                    className="text-[9px] font-bold text-white/40 border border-white/15 rounded-full px-2 py-0.5 uppercase tracking-wider"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    Todos los paquetes
                   </span>
                 )}
               </div>
@@ -83,12 +90,19 @@ export default function CurriculumB2B() {
                 >
                   {item.session}
                 </span>
-                {item.exclusiveDiamond && (
+                {item.exclusiveDiamond ? (
                   <span
                     className="text-[9px] font-bold text-brand-yellow border border-brand-yellow/40 rounded-full px-2 py-0.5 uppercase tracking-wider"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                   >
                     💎 Diamond
+                  </span>
+                ) : (
+                  <span
+                    className="text-[9px] font-bold text-white/40 border border-white/15 rounded-full px-2 py-0.5 uppercase tracking-wider"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    Todos los paquetes
                   </span>
                 )}
               </div>
