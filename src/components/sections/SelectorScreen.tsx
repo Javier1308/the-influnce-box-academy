@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
-import type { AppMode } from '../../App';
 import Logo from '../../assets/images/LogoTIBAHorizontal.png';
 import CienciaIcons from '../../assets/images/Ciencia_Icons.png';
 
 type SelectorScreenProps = {
-  onSelect: (mode: AppMode) => void;
+  onSelect: (mode: 'b2c' | 'b2b') => void;
 };
 
 const fadeUp = {
@@ -88,7 +87,7 @@ export default function SelectorScreen({ onSelect }: SelectorScreenProps) {
                 <span className="text-brand-yellow">como profesional</span>
               </h2>
               <p className="text-white/55 text-sm leading-relaxed" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                Talleres, coaching y programas personales de persuasión e influencia
+                Talleres, coaching y programas personales
               </p>
             </div>
 
@@ -153,7 +152,7 @@ export default function SelectorScreen({ onSelect }: SelectorScreenProps) {
                 <span className="text-brand-cyan">a mi equipo</span>
               </h2>
               <p className="text-white/55 text-sm leading-relaxed" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                Capacitación corporativa, workshops y programas a medida para equipos
+                Capacitación corporativa
               </p>
             </div>
 
