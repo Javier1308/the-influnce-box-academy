@@ -181,3 +181,195 @@ export const IMAGE_URLS = {
     'https://storage.googleapis.com/mixo-sites/images/file-d1c1205c-8011-4947-b00e-cfeb1bf46003.png',
   wef: 'https://storage.googleapis.com/mixo-sites/images/file-6a1a42b7-1e6c-44a2-8383-7de091797a73.jpg',
 };
+
+export const B2B_ROI = [
+  {
+    icon: '📈',
+    title: 'Cierra más negocios',
+    description:
+      'Reducción de ciclos de venta y aumento de un 30% en la tasa de cierre al influir mejor en las decisiones de compra.',
+    stat: '+30%',
+    statLabel: 'tasa de cierre',
+  },
+  {
+    icon: '🤝',
+    title: 'Retén tu talento',
+    description:
+      'Maximización del compromiso del equipo, reduciendo la rotación de talento y los costos de re-contratación.',
+    stat: '↓',
+    statLabel: 'rotación de personal',
+  },
+  {
+    icon: '🛡️',
+    title: 'Protege tu margen',
+    description:
+      'Storytelling y conexión emocional estratégica que acelera la toma de decisiones del cliente y elimina la necesidad de competir por precio.',
+    stat: '✓',
+    statLabel: 'protección de margen',
+  },
+];
+
+export const B2B_DIFFERENTIATORS = [
+  {
+    icon: '🔬',
+    title: 'Evidencia científica',
+    description:
+      'Influye en decisiones con base en evidencia científica, no en intuición ni experiencias aisladas.',
+  },
+  {
+    icon: '⚖️',
+    title: 'Principios éticos y universales',
+    description:
+      'Domina principios de persuasión éticos, universales y aplicables, más allá de trucos o tácticas del momento.',
+  },
+  {
+    icon: '🎯',
+    title: 'Impacto sostenido',
+    description:
+      'Lleva la persuasión a contextos reales, con herramientas diseñadas para generar impacto sostenido en tu entorno profesional.',
+  },
+];
+
+export type PackageTier = 'diamond' | 'platinum' | 'gold';
+
+export const B2B_PACKAGES = [
+  {
+    id: 'diamond' as PackageTier,
+    name: 'Diamond',
+    gem: '💎',
+    type: 'Teórico-Práctica + Material impreso',
+    description:
+      'La opción más completa, para equipos que buscan resultados reales y comprender cómo se construyen las decisiones para influir estratégicamente.',
+    sessions: 8,
+    sessionDuration: '1h 45min',
+    totalHours: '~13 hrs',
+    regularPrice: 4500,
+    discountedPrice: 4050,
+    recommended: true,
+    includes: [
+      'Certificados digitales e impresos',
+      'Bitácora de Sesión Estratégica',
+      'Resumen Ejecutivo (formato digital PDF)',
+      '5 Micro-entrenamientos de prospección y cierre de ventas',
+    ],
+    ctaLink: 'https://wa.link/1x71tx',
+  },
+  {
+    id: 'platinum' as PackageTier,
+    name: 'Platinum',
+    gem: '🥈',
+    type: 'Teórico-Práctica',
+    description:
+      'Ideal para equipos que buscan aplicar la persuasión en contextos reales y mejorar sus resultados comerciales.',
+    sessions: 7,
+    sessionDuration: '80 min',
+    totalHours: '~9 hrs',
+    regularPrice: 4330,
+    discountedPrice: 3897,
+    recommended: false,
+    includes: ['Certificado de participación digital'],
+    ctaLink: 'https://wa.link/1x71tx',
+  },
+  {
+    id: 'gold' as PackageTier,
+    name: 'Gold',
+    gem: '🥇',
+    type: 'Teórica',
+    description:
+      'La base necesaria para equipos que buscan fortalecer sus fundamentos en persuasión e influencia.',
+    sessions: 7,
+    sessionDuration: '55 min',
+    totalHours: '~6 hrs',
+    regularPrice: 2900,
+    discountedPrice: 2610,
+    recommended: false,
+    includes: ['Certificado de participación digital'],
+    ctaLink: 'https://wa.link/1x71tx',
+  },
+];
+
+export const B2B_AGILE_FORMATS = [
+  {
+    icon: '🧠',
+    name: 'Aprendizaje de Persuasión',
+    subtitle: 'Workshop intensivo',
+    description:
+      'Para quienes buscan maestría técnica y cambios de hábitos.',
+    sessions: 3,
+    sessionDuration: '90 min',
+    price: 1485,
+    ctaLink: 'https://wa.link/1x71tx',
+  },
+  {
+    icon: '🚀',
+    name: 'Impulso de Persuasión',
+    subtitle: 'Charla Express',
+    description: 'Una inyección de conceptos clave para resultados inmediatos.',
+    sessions: 1,
+    sessionDuration: '2 hrs 30 min',
+    price: 674,
+    ctaLink: 'https://wa.link/1x71tx',
+  },
+];
+
+export const B2B_CURRICULUM = [
+  {
+    session: 1,
+    title:
+      'Psicología de la Persuasión + Toma de Decisiones Humanas',
+    description:
+      '¿Qué es la persuasión y por qué es tan valorada en el mundo de los negocios? Las personas típicamente no saben qué influencia sus decisiones.',
+    exclusiveDiamond: true,
+    packages: ['diamond'] as PackageTier[],
+  },
+  {
+    session: 2,
+    title: 'Principio de Reciprocidad',
+    description: 'El balance emocional de dar y recibir.',
+    exclusiveDiamond: false,
+    packages: ['diamond', 'platinum', 'gold'] as PackageTier[],
+  },
+  {
+    session: 3,
+    title: 'Principio de Agrado',
+    description: 'El impacto de las conexiones personales en la toma de decisiones.',
+    exclusiveDiamond: false,
+    packages: ['diamond', 'platinum', 'gold'] as PackageTier[],
+  },
+  {
+    session: 4,
+    title: 'Principio de Unidad',
+    description: 'El poder de compartir una identidad y propósito.',
+    exclusiveDiamond: false,
+    packages: ['diamond', 'platinum', 'gold'] as PackageTier[],
+  },
+  {
+    session: 5,
+    title: 'Principio de Prueba Social',
+    description: 'Confiando en las decisiones de otros.',
+    exclusiveDiamond: false,
+    packages: ['diamond', 'platinum', 'gold'] as PackageTier[],
+  },
+  {
+    session: 6,
+    title: 'Principio de Autoridad',
+    description: 'Respetando opiniones y credenciales de expertos.',
+    exclusiveDiamond: false,
+    packages: ['diamond', 'platinum', 'gold'] as PackageTier[],
+  },
+  {
+    session: 7,
+    title: 'Principio de Consistencia',
+    description: 'Actuando alineados con compromisos previos.',
+    exclusiveDiamond: false,
+    packages: ['diamond', 'platinum', 'gold'] as PackageTier[],
+  },
+  {
+    session: 8,
+    title: 'Principio de Escasez + Fenómeno del Contraste',
+    description:
+      'Respondiendo a recursos u oportunidades limitadas. Cuando la percepción de algo cambia drásticamente según el estímulo previo.',
+    exclusiveDiamond: true,
+    packages: ['diamond'] as PackageTier[],
+  },
+];
