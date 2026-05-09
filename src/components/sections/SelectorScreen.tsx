@@ -6,10 +6,6 @@ type SelectorScreenProps = {
   onSelect: (mode: 'b2c' | 'b2b') => void;
 };
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as [number,number,number,number] } },
-};
 
 export default function SelectorScreen({ onSelect }: SelectorScreenProps) {
   return (
@@ -35,7 +31,7 @@ export default function SelectorScreen({ onSelect }: SelectorScreenProps) {
         {/* ── Mitad B2C ── */}
         <motion.button
           onClick={() => onSelect('b2c')}
-          className="relative flex-1 flex flex-col items-center justify-center gap-6 p-8 md:p-16 cursor-pointer group overflow-hidden text-left focus:outline-none min-h-[50vh] md:min-h-screen"
+          className="relative flex-1 flex flex-col items-center justify-center gap-6 p-8 md:p-16 cursor-pointer group overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark min-h-[50vh] md:min-h-screen"
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as [number,number,number,number] }}
@@ -54,7 +50,7 @@ export default function SelectorScreen({ onSelect }: SelectorScreenProps) {
           />
           {/* Glow amarillo */}
           <div
-            className="absolute inset-0 pointer-events-none transition-opacity duration-500 opacity-100 group-hover:opacity-100"
+            className="absolute inset-0 pointer-events-none transition-opacity duration-500 opacity-100"
             style={{ background: 'radial-gradient(ellipse at 50% 60%, rgba(242,190,27,0.10) 0%, transparent 70%)' }}
           />
           {/* Borde derecho separador (solo desktop) */}
@@ -73,8 +69,7 @@ export default function SelectorScreen({ onSelect }: SelectorScreenProps) {
 
             <div>
               <p
-                className="text-brand-yellow text-xs font-bold uppercase tracking-widest mb-2"
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
+                className="font-montserrat text-brand-yellow text-xs font-bold uppercase tracking-widest mb-2"
               >
                 Profesional Individual
               </p>
@@ -86,15 +81,14 @@ export default function SelectorScreen({ onSelect }: SelectorScreenProps) {
                 <br />
                 <span className="text-brand-yellow">como profesional</span>
               </h2>
-              <p className="text-white/55 text-sm leading-relaxed" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+              <p className="font-montserrat text-white/55 text-sm leading-relaxed">
                 Talleres, coaching y programas personales
               </p>
             </div>
 
             <motion.div
               variants={{ hover: { scale: 1.05 } }}
-              className="inline-flex items-center gap-2 border-2 border-brand-yellow text-brand-yellow font-bold text-sm px-6 py-3 rounded-full"
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
+              className="font-montserrat inline-flex items-center gap-2 border-2 border-brand-yellow text-brand-yellow font-bold text-sm px-6 py-3 rounded-full"
             >
               Quiero crecer →
             </motion.div>
@@ -104,7 +98,7 @@ export default function SelectorScreen({ onSelect }: SelectorScreenProps) {
         {/* ── Mitad B2B ── */}
         <motion.button
           onClick={() => onSelect('b2b')}
-          className="relative flex-1 flex flex-col items-center justify-center gap-6 p-8 md:p-16 cursor-pointer group overflow-hidden text-left focus:outline-none min-h-[50vh] md:min-h-screen"
+          className="relative flex-1 flex flex-col items-center justify-center gap-6 p-8 md:p-16 cursor-pointer group overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark min-h-[50vh] md:min-h-screen"
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as [number,number,number,number], delay: 0.1 }}
@@ -138,8 +132,7 @@ export default function SelectorScreen({ onSelect }: SelectorScreenProps) {
 
             <div>
               <p
-                className="text-brand-cyan text-xs font-bold uppercase tracking-widest mb-2"
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
+                className="font-montserrat text-brand-cyan text-xs font-bold uppercase tracking-widest mb-2"
               >
                 Empresa o Equipo
               </p>
@@ -151,15 +144,14 @@ export default function SelectorScreen({ onSelect }: SelectorScreenProps) {
                 <br />
                 <span className="text-brand-cyan">a mi equipo</span>
               </h2>
-              <p className="text-white/55 text-sm leading-relaxed" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+              <p className="font-montserrat text-white/55 text-sm leading-relaxed">
                 Capacitación corporativa
               </p>
             </div>
 
             <motion.div
               variants={{ hover: { scale: 1.05 } }}
-              className="inline-flex items-center gap-2 border-2 border-brand-cyan text-brand-cyan font-bold text-sm px-6 py-3 rounded-full"
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
+              className="font-montserrat inline-flex items-center gap-2 border-2 border-brand-cyan text-brand-cyan font-bold text-sm px-6 py-3 rounded-full"
             >
               Para mi empresa →
             </motion.div>
