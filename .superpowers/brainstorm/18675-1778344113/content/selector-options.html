@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selector B2C / B2B — Mockups</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0d1117;
+      color: #f9fafb;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      padding: 32px 24px 60px;
+    }
+
+    .page-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: #F2BE1B;
+      margin-bottom: 6px;
+    }
+    .page-subtitle {
+      text-align: center;
+      color: #9ca3af;
+      font-size: 14px;
+      margin-bottom: 36px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    /* ── OPTION CARD ── */
+    .opt-card {
+      border: 2px solid transparent;
+      border-radius: 16px;
+      background: #111827;
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color .2s, transform .15s;
+      position: relative;
+    }
+    .opt-card:hover { border-color: #F2BE1B44; transform: translateY(-2px); }
+    .opt-card.selected { border-color: #F2BE1B; }
+    .opt-card.selected .opt-badge { background: #F2BE1B; color: #000; }
+
+    .opt-badge {
+      position: absolute;
+      top: 12px; right: 12px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      background: #1f2937;
+      border: 1px solid #374151;
+      color: #9ca3af;
+      padding: 3px 8px;
+      border-radius: 99px;
+    }
+
+    .opt-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #6b7280;
+      padding: 18px 18px 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .mockup-wrap {
+      padding: 14px 18px 18px;
+    }
+
+    /* ─── OPTION A: Pantalla completa dividida ─── */
+    .optA-screen {
+      border-radius: 10px;
+      overflow: hidden;
+      background: #111827;
+      border: 1px solid #1f2937;
+      height: 260px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .optA-half {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px;
+      transition: background .2s;
+    }
+    .optA-half.b2c {
+      background: linear-gradient(135deg, #111827 60%, #F2BE1B10);
+      border-right: 1px solid #1f2937;
+    }
+    .optA-half.b2b {
+      background: linear-gradient(135deg, #111827 60%, #5FC5E310);
+    }
+    .optA-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+    .optA-half.b2c .optA-icon { background: #F2BE1B20; }
+    .optA-half.b2b .optA-icon { background: #5FC5E320; }
+    .optA-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      font-weight: 900;
+      text-align: center;
+      line-height: 1.2;
+    }
+    .optA-half.b2c .optA-title { color: #F2BE1B; }
+    .optA-half.b2b .optA-title { color: #5FC5E3; }
+    .optA-sub {
+      font-size: 10px;
+      color: #6b7280;
+      text-align: center;
+      line-height: 1.4;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .optA-btn {
+      margin-top: 4px;
+      padding: 5px 14px;
+      border-radius: 99px;
+      font-size: 10px;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      border: 1.5px solid;
+      cursor: default;
+    }
+    .optA-half.b2c .optA-btn { border-color: #F2BE1B; color: #F2BE1B; }
+    .optA-half.b2b .optA-btn { border-color: #5FC5E3; color: #5FC5E3; }
+    .optA-logo {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0A0F1A;
+      border: 1px solid #1f2937;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 9px;
+      font-weight: 700;
+      color: #F2BE1B;
+      letter-spacing: .1em;
+      font-family: 'Playfair Display', serif;
+      white-space: nowrap;
+    }
+
+    /* ─── OPTION B: Overlay modal centrado ─── */
+    .optB-screen {
+      border-radius: 10px;
+      overflow: hidden;
+      background: #0A0F1A;
+      border: 1px solid #1f2937;
+      height: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      gap: 12px;
+      position: relative;
+    }
+    .optB-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      font-weight: 900;
+      color: #F2BE1B;
+      letter-spacing: .05em;
+    }
+    .optB-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 12px;
+      color: #fff;
+      text-align: center;
+      line-height: 1.4;
+    }
+    .optB-sub {
+      font-size: 10px;
+      color: #6b7280;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+    }
+    .optB-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      width: 100%;
+    }
+    .optB-btn {
+      padding: 8px 10px;
+      border-radius: 10px;
+      text-align: center;
+      border: 1.5px solid;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+    .optB-btn.b2c { border-color: #F2BE1B; background: #F2BE1B15; }
+    .optB-btn.b2b { border-color: #5FC5E3; background: #5FC5E315; }
+    .optB-btn-icon { font-size: 16px; }
+    .optB-btn-label {
+      font-size: 10px;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: .08em;
+    }
+    .optB-btn.b2c .optB-btn-label { color: #F2BE1B; }
+    .optB-btn.b2b .optB-btn-label { color: #5FC5E3; }
+    .optB-btn-sub {
+      font-size: 9px;
+      color: #9ca3af;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* ─── OPTION C: Hero con tabs ─── */
+    .optC-screen {
+      border-radius: 10px;
+      overflow: hidden;
+      background: #111827;
+      border: 1px solid #1f2937;
+      height: 260px;
+      display: flex;
+      flex-direction: column;
+    }
+    .optC-nav {
+      background: #0A0F1A;
+      border-bottom: 1px solid #1f2937;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .optC-nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 10px;
+      color: #F2BE1B;
+    }
+    .optC-tabs {
+      display: flex;
+      gap: 2px;
+      background: #111827;
+      border-radius: 8px;
+      padding: 2px;
+    }
+    .optC-tab {
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 9px;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: .06em;
+      cursor: default;
+      color: #6b7280;
+    }
+    .optC-tab.active-b2c { background: #F2BE1B; color: #000; }
+    .optC-tab.active-b2b { background: #5FC5E3; color: #000; }
+    .optC-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px;
+      background: linear-gradient(135deg, #111827 60%, #F2BE1B08);
+    }
+    .optC-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      font-weight: 900;
+      text-align: center;
+      line-height: 1.3;
+      color: #fff;
+    }
+    .optC-headline span { color: #F2BE1B; }
+    .optC-sub {
+      font-size: 10px;
+      color: #9ca3af;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+    }
+    .optC-cta {
+      background: #F2BE1B;
+      color: #000;
+      font-weight: 700;
+      font-size: 10px;
+      font-family: 'Montserrat', sans-serif;
+      padding: 6px 16px;
+      border-radius: 99px;
+    }
+
+    /* ─── DESCRIPTIONS ─── */
+    .opt-desc {
+      padding: 14px 18px 18px;
+      border-top: 1px solid #1f2937;
+    }
+    .opt-desc h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #f9fafb;
+      margin-bottom: 6px;
+    }
+    .opt-desc p {
+      font-size: 12px;
+      color: #6b7280;
+      line-height: 1.6;
+    }
+    .opt-pros {
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .opt-pro {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 11px;
+      color: #9ca3af;
+    }
+    .opt-pro::before {
+      content: '✓';
+      color: #F2BE1B;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .opt-con {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 11px;
+      color: #6b7280;
+    }
+    .opt-con::before {
+      content: '○';
+      color: #4b5563;
+      flex-shrink: 0;
+    }
+
+    /* ─── SELECT BUTTON ─── */
+    .select-btn {
+      display: block;
+      width: calc(100% - 36px);
+      margin: 0 18px 18px;
+      text-align: center;
+      padding: 9px;
+      border-radius: 8px;
+      border: 1.5px solid #F2BE1B44;
+      color: #F2BE1B;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      background: transparent;
+      transition: background .15s, border-color .15s;
+    }
+    .select-btn:hover { background: #F2BE1B15; border-color: #F2BE1B; }
+    .opt-card.selected .select-btn {
+      background: #F2BE1B;
+      color: #000;
+      border-color: #F2BE1B;
+    }
+
+    /* ─── INDICATOR ─── */
+    #indicator {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0A0F1A;
+      border: 1px solid #F2BE1B44;
+      border-radius: 99px;
+      padding: 8px 20px;
+      font-size: 12px;
+      color: #F2BE1B;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <p class="page-title">¿Cómo quieres que funcione el selector de entrada?</p>
+  <p class="page-subtitle">Elige el estilo que mejor represente la experiencia de llegada al sitio</p>
+
+  <div class="grid">
+
+    <!-- ═══ OPCIÓN A: Pantalla dividida ═══ -->
+    <div class="opt-card" id="card-a" onclick="selectCard('a')">
+      <div class="opt-badge" id="badge-a">A</div>
+      <div class="opt-label">Opción A</div>
+      <div class="mockup-wrap">
+        <div class="optA-screen" style="position:relative;">
+          <div class="optA-logo">THE INFLUENCE BOX</div>
+          <div class="optA-half b2c" style="margin-top:28px;">
+            <div class="optA-icon">👤</div>
+            <div class="optA-title">Profesional<br/>Individual</div>
+            <div class="optA-sub">Talleres, coaching<br/>y programas personales</div>
+            <div class="optA-btn">Quiero crecer →</div>
+          </div>
+          <div class="optA-half b2b" style="margin-top:28px;">
+            <div class="optA-icon">🏢</div>
+            <div class="optA-title">Empresa<br/>o Equipo</div>
+            <div class="optA-sub">Capacitación<br/>corporativa B2B</div>
+            <div class="optA-btn">Para mi empresa →</div>
+          </div>
+        </div>
+      </div>
+      <div class="opt-desc">
+        <h3>Pantalla dividida al 50%</h3>
+        <p>El usuario aterriza en una pantalla partida. Cada mitad es un portal visual directo hacia B2C o B2B.</p>
+        <div class="opt-pros">
+          <div class="opt-pro">Decisión inmediata, sin scroll</div>
+          <div class="opt-pro">Máximo impacto visual</div>
+          <div class="opt-pro">Patrón común en servicios duales</div>
+          <div class="opt-con">No muestra contenido sin elegir primero</div>
+        </div>
+      </div>
+      <button class="select-btn" onclick="selectCard('a'); event.stopPropagation()">Elegir esta opción</button>
+    </div>
+
+    <!-- ═══ OPCIÓN B: Modal / overlay centrado ═══ -->
+    <div class="opt-card" id="card-b" onclick="selectCard('b')">
+      <div class="opt-badge" id="badge-b">B</div>
+      <div class="opt-label">Opción B</div>
+      <div class="mockup-wrap">
+        <div class="optB-screen">
+          <div class="optB-logo">THE INFLUENCE BOX ACADEMY</div>
+          <div class="optB-headline">Psicología persuasiva aplicada.<br/>¿A quién va dirigido tu interés?</div>
+          <div class="optB-sub">Selecciona para ver el contenido<br/>diseñado para ti</div>
+          <div class="optB-btns">
+            <div class="optB-btn b2c">
+              <div class="optB-btn-icon">🎯</div>
+              <div class="optB-btn-label">Soy profesional</div>
+              <div class="optB-btn-sub">Quiero capacitarme</div>
+            </div>
+            <div class="optB-btn b2b">
+              <div class="optB-btn-icon">🏢</div>
+              <div class="optB-btn-label">Tengo una empresa</div>
+              <div class="optB-btn-sub">Para mi equipo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="opt-desc">
+        <h3>Overlay / Modal de bienvenida</h3>
+        <p>Al ingresar, aparece un modal centrado sobre el fondo del hero. Elige y se cierra revelando la landing correcta.</p>
+        <div class="opt-pros">
+          <div class="opt-pro">Menos disruptivo, hero visible detrás</div>
+          <div class="opt-pro">Fácil de omitir (esc / cerrar)</div>
+          <div class="opt-con">Puede sentirse como popup intrusivo</div>
+          <div class="opt-con">Difícil de encontrar si se cierra sin elegir</div>
+        </div>
+      </div>
+      <button class="select-btn" onclick="selectCard('b'); event.stopPropagation()">Elegir esta opción</button>
+    </div>
+
+    <!-- ═══ OPCIÓN C: Tabs en el navbar ═══ -->
+    <div class="opt-card" id="card-c" onclick="selectCard('c')">
+      <div class="opt-badge" id="badge-c">C</div>
+      <div class="opt-label">Opción C</div>
+      <div class="mockup-wrap">
+        <div class="optC-screen">
+          <div class="optC-nav">
+            <div class="optC-nav-logo">THE INFLUENCE BOX</div>
+            <div class="optC-tabs">
+              <div class="optC-tab active-b2c">Para ti</div>
+              <div class="optC-tab">Para tu empresa</div>
+            </div>
+            <div style="font-size:9px;color:#F2BE1B;font-family:'Montserrat',sans-serif;font-weight:700;">Contáctanos</div>
+          </div>
+          <div class="optC-body">
+            <div class="optC-headline">Aprenderás a aplicar la <span>psicología de la persuasión</span> para impactar y cerrar más negocios</div>
+            <div class="optC-sub">Programa individual · Talleres · Coaching</div>
+            <div class="optC-cta">¡Mira el video de 6min!</div>
+          </div>
+        </div>
+      </div>
+      <div class="opt-desc">
+        <h3>Tabs en el Navbar (switcher persistente)</h3>
+        <p>El Navbar tiene dos tabs: "Para ti" y "Para tu empresa". El usuario puede cambiar de modo en cualquier momento sin salir del sitio.</p>
+        <div class="opt-pros">
+          <div class="opt-pro">Acceso siempre visible en navbar</div>
+          <div class="opt-pro">Usuario puede cambiar cuando quiera</div>
+          <div class="opt-pro">No interrumpe el flujo inicial</div>
+          <div class="opt-con">Menos énfasis en la decisión inicial</div>
+          <div class="opt-con">Requiere recordar en qué modo estás</div>
+        </div>
+      </div>
+      <button class="select-btn" onclick="selectCard('c'); event.stopPropagation()">Elegir esta opción</button>
+    </div>
+
+  </div>
+
+  <div id="indicator">✓ Seleccionado — responde en el terminal</div>
+
+  <script>
+    let selected = null;
+    function selectCard(id) {
+      if (selected) {
+        document.getElementById('card-' + selected).classList.remove('selected');
+        document.getElementById('badge-' + selected).textContent = selected.toUpperCase();
+      }
+      selected = id;
+      document.getElementById('card-' + id).classList.add('selected');
+      document.getElementById('badge-' + id).textContent = '✓';
+      document.getElementById('indicator').style.display = 'block';
+
+      // Write to events file via fetch (superpowers helper)
+      const labels = { a: 'Pantalla dividida 50/50', b: 'Modal / overlay centrado', c: 'Tabs en el navbar' };
+      if (window.__sp_recordChoice) {
+        window.__sp_recordChoice(id, labels[id]);
+      }
+    }
+  </script>
+
+</body>
+</html>

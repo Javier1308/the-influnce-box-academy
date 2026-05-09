@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estructura B2B Landing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0d1117;
+      color: #f9fafb;
+      font-family: 'Inter', sans-serif;
+      padding: 32px 24px 80px;
+    }
+    .page-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: #F2BE1B;
+      margin-bottom: 6px;
+    }
+    .page-subtitle {
+      text-align: center;
+      color: #9ca3af;
+      font-size: 13px;
+      margin-bottom: 36px;
+    }
+
+    /* ── LAYOUT ── */
+    .row { display: flex; gap: 28px; max-width: 1180px; margin: 0 auto 28px; }
+    .col { flex: 1; }
+
+    /* ── SECTION LABEL ── */
+    .sec-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #5FC5E3;
+      margin-bottom: 10px;
+    }
+
+    /* ── WIREFRAME BLOCK ── */
+    .wf {
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 10px;
+    }
+    .wf-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      color: #F2BE1B;
+      margin-bottom: 6px;
+    }
+    .wf p {
+      font-size: 11px;
+      color: #6b7280;
+      line-height: 1.6;
+    }
+    .wf-row { display: flex; gap: 10px; margin-top: 10px; }
+    .wf-box {
+      flex: 1;
+      background: #1f2937;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 10px;
+      color: #9ca3af;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      line-height: 1.5;
+    }
+    .wf-box.yellow { border: 1px solid #F2BE1B44; color: #F2BE1B; }
+    .wf-box.cyan { border: 1px solid #5FC5E344; color: #5FC5E3; }
+    .wf-box.white { border: 1px solid #ffffff22; color: #d1d5db; }
+
+    /* ── SECTION FLOW ── */
+    .flow {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .flow-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 12px;
+      padding: 16px;
+      position: relative;
+    }
+    .flow-item.highlight { border-color: #5FC5E344; background: #5FC5E308; }
+    .flow-item.highlight2 { border-color: #F2BE1B44; background: #F2BE1B05; }
+    .flow-num {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: #1f2937;
+      border: 1.5px solid #374151;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: #9ca3af;
+      flex-shrink: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .flow-item.highlight .flow-num { border-color: #5FC5E3; color: #5FC5E3; background: #5FC5E315; }
+    .flow-item.highlight2 .flow-num { border-color: #F2BE1B; color: #F2BE1B; background: #F2BE1B15; }
+    .flow-body { flex: 1; }
+    .flow-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #f9fafb;
+      margin-bottom: 4px;
+    }
+    .flow-desc {
+      font-size: 11px;
+      color: #6b7280;
+      line-height: 1.6;
+    }
+    .flow-tag {
+      position: absolute;
+      top: 12px; right: 12px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 99px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .tag-new { background: #5FC5E320; color: #5FC5E3; border: 1px solid #5FC5E344; }
+    .tag-shared { background: #F2BE1B15; color: #F2BE1B; border: 1px solid #F2BE1B44; }
+    .tag-adapted { background: #a855f715; color: #c084fc; border: 1px solid #a855f744; }
+
+    .legend {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: #9ca3af;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .legend-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+    .dot-new { background: #5FC5E3; }
+    .dot-shared { background: #F2BE1B; }
+    .dot-adapted { background: #c084fc; }
+
+    .divider {
+      text-align: center;
+      color: #374151;
+      font-size: 20px;
+      margin: 8px 0 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <p class="page-title">Estructura de la Landing B2B</p>
+  <p class="page-subtitle">Secciones propuestas — qué es nuevo, qué se adapta del B2C y qué se reutiliza directo</p>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot dot-new"></div> Sección nueva (solo B2B)</div>
+    <div class="legend-item"><div class="legend-dot dot-adapted"></div> Adaptada del B2C</div>
+    <div class="legend-item"><div class="legend-dot dot-shared"></div> Reutilizada del B2C sin cambios</div>
+  </div>
+
+  <div class="flow">
+
+    <!-- 1 -->
+    <div class="flow-item">
+      <div class="flow-num">🏠</div>
+      <div class="flow-body">
+        <div class="flow-name">Selector de entrada (pantalla dividida)</div>
+        <div class="flow-desc">La primera pantalla que ve cualquier visitante. Mitad izquierda B2C (amarillo), mitad derecha B2B (cyan). Al hacer clic en una mitad, se carga la landing correspondiente y el navbar refleja el modo activo.</div>
+      </div>
+      <div class="flow-tag tag-new">Nuevo</div>
+    </div>
+
+    <div class="divider">↓</div>
+
+    <!-- 2 -->
+    <div class="flow-item highlight2">
+      <div class="flow-num">1</div>
+      <div class="flow-body">
+        <div class="flow-name">Hero B2B</div>
+        <div class="flow-desc">Mismo estilo visual del Hero B2C (fondo oscuro, Playfair Display, glow amarillo) pero con copy corporativo: <em>"Desarrollamos el activo más poderoso de tu empresa: la capacidad de influir"</em>. CTA directo a WhatsApp empresas. Sin video — reemplazado por los 3 ROI del PDF (badges destacados).</div>
+      </div>
+      <div class="flow-tag tag-adapted">Adaptada</div>
+    </div>
+
+    <!-- 3 -->
+    <div class="flow-item">
+      <div class="flow-num">2</div>
+      <div class="flow-body">
+        <div class="flow-name">ROI / Beneficios para la empresa</div>
+        <div class="flow-desc">3 cards horizontales: +30% tasa de cierre · Reducción de rotación de talento · Eliminación de guerra de precios. Mismos estilos de cards del B2C (bg-white/5, borde sutil, hover amarillo).</div>
+      </div>
+      <div class="flow-tag tag-new">Nuevo</div>
+    </div>
+
+    <!-- 4 — SHARED -->
+    <div class="flow-item highlight2">
+      <div class="flow-num">3</div>
+      <div class="flow-body">
+        <div class="flow-name">Social Proof (WEF + LinkedIn)</div>
+        <div class="flow-desc">Las mismas secciones SocialProof y LinkedInProof del B2C reutilizadas sin cambios. Hablan de influencia social como habilidad crítica para empresas — encajan perfectamente en B2B.</div>
+      </div>
+      <div class="flow-tag tag-shared">Reutilizada</div>
+    </div>
+
+    <!-- 5 -->
+    <div class="flow-item highlight">
+      <div class="flow-num">4</div>
+      <div class="flow-body">
+        <div class="flow-name">3 Diferenciadores</div>
+        <div class="flow-desc">Del PDF: evidencia científica · principios éticos y universales · impacto sostenido. Cards con íconos, mismo estilo de cards de WhyInfluence del B2C. Sección rápida de credibilidad.</div>
+      </div>
+      <div class="flow-tag tag-new">Nuevo</div>
+    </div>
+
+    <!-- 6 -->
+    <div class="flow-item highlight">
+      <div class="flow-num">5</div>
+      <div class="flow-body">
+        <div class="flow-name">Paquetes Mastery de Persuasión (Diamond / Platinum / Gold)</div>
+        <div class="flow-desc">El núcleo del B2B. 3 cards con pricing, sesiones, beneficios incluidos y CTA a WhatsApp. El paquete Diamond resaltado como "Recomendado". Mismos estilos de ServiceCard del B2C. Debajo: 2 formatos ágiles (Workshop intensivo S/1,485 · Charla Express S/674).</div>
+      </div>
+      <div class="flow-tag tag-new">Nuevo</div>
+    </div>
+
+    <!-- 7 -->
+    <div class="flow-item highlight">
+      <div class="flow-num">6</div>
+      <div class="flow-body">
+        <div class="flow-name">Temario (8 sesiones)</div>
+        <div class="flow-desc">Grid visual de las 8 sesiones del programa. Muestra qué paquetes incluyen cada sesión (Diamond exclusivo en sesión 1 y 8). Mismo estilo de SevenPrinciples pero en formato tabla/grid.</div>
+      </div>
+      <div class="flow-tag tag-new">Nuevo</div>
+    </div>
+
+    <!-- 8 — SHARED -->
+    <div class="flow-item highlight2">
+      <div class="flow-num">7</div>
+      <div class="flow-body">
+        <div class="flow-name">Cialdini + Certificación</div>
+        <div class="flow-desc">Secciones AboutCialdini y Certification del B2C reutilizadas. El respaldo institucional y la certificación internacional son igual de relevantes para empresas.</div>
+      </div>
+      <div class="flow-tag tag-shared">Reutilizada</div>
+    </div>
+
+    <!-- 9 -->
+    <div class="flow-item highlight">
+      <div class="flow-num">8</div>
+      <div class="flow-body">
+        <div class="flow-name">Clientes &amp; Testimonios corporativos</div>
+        <div class="flow-desc">Logos de clientes del PDF (Menaje Rent, Limagine, Voilà, DG+, ISCO, Telmark, Syntax, Papas Queen's) + 4 testimonios con nombre, empresa y cargo. Mismo estilo visual de SocialProof.</div>
+      </div>
+      <div class="flow-tag tag-new">Nuevo</div>
+    </div>
+
+    <!-- 10 — SHARED -->
+    <div class="flow-item highlight2">
+      <div class="flow-num">9</div>
+      <div class="flow-body">
+        <div class="flow-name">Sobre el Coach</div>
+        <div class="flow-desc">La sección AboutCoach del B2C reutilizada. Se añade énfasis en los 13+ años de experiencia corporativa en ventas y formación de equipos.</div>
+      </div>
+      <div class="flow-tag tag-shared">Reutilizada</div>
+    </div>
+
+    <!-- 11 -->
+    <div class="flow-item highlight">
+      <div class="flow-num">10</div>
+      <div class="flow-body">
+        <div class="flow-name">CTA Final B2B</div>
+        <div class="flow-desc">"Agenda una llamada y recibe la propuesta personalizada para tu empresa". Botón WhatsApp empresas + condiciones de contratación (50%+50%, RHE). Fondo oscuro con borde cyan.</div>
+      </div>
+      <div class="flow-tag tag-new">Nuevo</div>
+    </div>
+
+    <!-- Footer -->
+    <div class="flow-item highlight2">
+      <div class="flow-num">🔻</div>
+      <div class="flow-body">
+        <div class="flow-name">Footer</div>
+        <div class="flow-desc">El mismo Footer del B2C, sin cambios.</div>
+      </div>
+      <div class="flow-tag tag-shared">Reutilizada</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
