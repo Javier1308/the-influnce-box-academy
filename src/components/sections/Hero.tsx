@@ -11,7 +11,7 @@ import RelojLogo from '../../assets/images/RelojLogo.png';
 import Badge1 from '../../assets/images/Badge1.png';
 import Badge2 from '../../assets/images/Badge2.png';
 import Badge3 from '../../assets/images/Badge3.png';
-import ErlenmeyerPattern from '../../assets/images/erlenmeyer-pattern.svg';
+import CienciaIcons from '../../assets/images/Ciencia_Icons.png';
 
 // Pega aquí la URL del video cuando la tengas (YouTube embed o similar)
 // Ejemplo YouTube: 'https://www.youtube.com/embed/TU_ID_AQUI'
@@ -33,13 +33,15 @@ export default function Hero() {
 
   return (
     <section className="relative bg-brand-dark overflow-hidden">
-      {/* Noise texture overlay */}
+      {/* Science icons background */}
       <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        className="absolute inset-0 pointer-events-none opacity-[0.07]"
         style={{
-          backgroundImage:
-            'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\' opacity=\'1\'/%3E%3C/svg%3E")',
-          backgroundSize: '256px 256px',
+          backgroundImage: `url(${CienciaIcons})`,
+          backgroundSize: '150%',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          filter: 'invert(1) brightness(1.5)',
         }}
       />
       {/* Radial glow */}
@@ -48,16 +50,6 @@ export default function Hero() {
         style={{
           background:
             'radial-gradient(ellipse at 50% 0%, rgba(242,190,27,0.08) 0%, transparent 65%)',
-        }}
-      />
-      {/* Erlenmeyer mosaic watermark */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.06]"
-        style={{
-          backgroundImage: `url(${ErlenmeyerPattern})`,
-          backgroundSize: '240px 160px',
-          backgroundRepeat: 'repeat',
-          filter: 'invert(1) sepia(1) saturate(3) hue-rotate(5deg) brightness(1.2)',
         }}
       />
 
