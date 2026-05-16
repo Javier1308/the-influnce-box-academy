@@ -1,164 +1,125 @@
-import { motion } from 'framer-motion';
 import Logo from '../../assets/images/LogoTIBAHorizontal.png';
-import CienciaIcons from '../../assets/images/Ciencia_Icons.png';
+import CerebroAmarillo from '../../assets/images/CerebroAmarillo.svg';
+import DianaCeleste from '../../assets/images/DianaCeleste.svg';
+import PersuasionCard from '../ui/PersuasionCard';
 
 type SelectorScreenProps = {
   onSelect: (mode: 'b2c' | 'b2b') => void;
 };
 
-
 export default function SelectorScreen({ onSelect }: SelectorScreenProps) {
   return (
-    <div className="min-h-screen flex flex-col bg-brand-dark overflow-hidden">
-
-      {/* Logo centrado en la parte superior */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="flex justify-center pt-8 pb-4 px-4 absolute top-0 left-0 right-0 z-10"
-      >
+    <div
+      className="min-h-screen flex flex-col"
+      style={{ backgroundColor: '#0A0E1A' }}
+    >
+      {/* ── Logo ── */}
+      <div className="flex justify-center pt-8 pb-4">
         <img
           src={Logo}
           alt="The Influence Box Academy"
-          className="h-10 md:h-14 w-auto object-contain"
+          className="h-[72px] md:h-24 w-auto object-contain"
         />
-      </motion.div>
-
-      {/* Dos mitades */}
-      <div className="flex flex-col md:flex-row flex-1 min-h-screen">
-
-        {/* ── Mitad B2C ── */}
-        <motion.button
-          onClick={() => onSelect('b2c')}
-          className="relative flex-1 flex flex-col items-center justify-center gap-6 p-8 md:p-16 cursor-pointer group overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark min-h-[50vh] md:min-h-screen"
-          initial={{ opacity: 0, x: -40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as [number,number,number,number] }}
-          whileHover="hover"
-        >
-          {/* Fondo con watermark ciencia */}
-          <div
-            className="absolute inset-0 pointer-events-none opacity-[0.05] group-hover:opacity-[0.09] transition-opacity duration-500"
-            style={{
-              backgroundImage: `url(${CienciaIcons})`,
-              backgroundSize: '120%',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              filter: 'invert(1) brightness(1.5)',
-            }}
-          />
-          {/* Glow amarillo */}
-          <div
-            className="absolute inset-0 pointer-events-none transition-opacity duration-500 opacity-100"
-            style={{ background: 'radial-gradient(ellipse at 50% 60%, rgba(242,190,27,0.10) 0%, transparent 70%)' }}
-          />
-          {/* Borde derecho separador (solo desktop) */}
-          <div className="hidden md:block absolute right-0 top-[10%] bottom-[10%] w-px bg-white/10" />
-          {/* Borde inferior separador (solo mobile) */}
-          <div className="md:hidden absolute bottom-0 left-[10%] right-[10%] h-px bg-white/10" />
-
-          <div className="relative z-10 flex flex-col items-center gap-5 max-w-xs text-center">
-            {/* Ícono */}
-            <motion.div
-              variants={{ hover: { scale: 1.15 } }}
-              className="w-20 h-20 rounded-full bg-brand-yellow/10 border border-brand-yellow/30 flex items-center justify-center text-4xl"
-            >
-              👤
-            </motion.div>
-
-            <div>
-              <p
-                className="font-montserrat text-brand-yellow text-xs font-bold uppercase tracking-widest mb-2"
-              >
-                Profesional Individual
-              </p>
-              <h2
-                className="text-white font-black text-2xl md:text-3xl lg:text-4xl leading-tight mb-3"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                Quiero crecer
-                <br />
-                <span className="text-brand-yellow">como profesional</span>
-              </h2>
-              <p className="font-montserrat text-white/55 text-sm leading-relaxed">
-                Talleres, coaching y programas personales
-              </p>
-            </div>
-
-            <motion.div
-              variants={{ hover: { scale: 1.05 } }}
-              className="font-montserrat inline-flex items-center gap-2 border-2 border-brand-yellow text-brand-yellow font-bold text-sm px-6 py-3 rounded-full"
-            >
-              Quiero crecer →
-            </motion.div>
-          </div>
-        </motion.button>
-
-        {/* ── Mitad B2B ── */}
-        <motion.button
-          onClick={() => onSelect('b2b')}
-          className="relative flex-1 flex flex-col items-center justify-center gap-6 p-8 md:p-16 cursor-pointer group overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark min-h-[50vh] md:min-h-screen"
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as [number,number,number,number], delay: 0.1 }}
-          whileHover="hover"
-        >
-          {/* Fondo con watermark */}
-          <div
-            className="absolute inset-0 pointer-events-none opacity-[0.05] group-hover:opacity-[0.09] transition-opacity duration-500"
-            style={{
-              backgroundImage: `url(${CienciaIcons})`,
-              backgroundSize: '120%',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              filter: 'invert(1) brightness(1.5)',
-            }}
-          />
-          {/* Glow cyan */}
-          <div
-            className="absolute inset-0 pointer-events-none transition-opacity duration-500"
-            style={{ background: 'radial-gradient(ellipse at 50% 60%, rgba(95,197,227,0.10) 0%, transparent 70%)' }}
-          />
-
-          <div className="relative z-10 flex flex-col items-center gap-5 max-w-xs text-center">
-            {/* Ícono */}
-            <motion.div
-              variants={{ hover: { scale: 1.15 } }}
-              className="w-20 h-20 rounded-full bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-4xl"
-            >
-              🏢
-            </motion.div>
-
-            <div>
-              <p
-                className="font-montserrat text-brand-cyan text-xs font-bold uppercase tracking-widest mb-2"
-              >
-                Empresa o Equipo
-              </p>
-              <h2
-                className="text-white font-black text-2xl md:text-3xl lg:text-4xl leading-tight mb-3"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                Quiero capacitar
-                <br />
-                <span className="text-brand-cyan">a mi equipo</span>
-              </h2>
-              <p className="font-montserrat text-white/55 text-sm leading-relaxed">
-                Capacitación corporativa
-              </p>
-            </div>
-
-            <motion.div
-              variants={{ hover: { scale: 1.05 } }}
-              className="font-montserrat inline-flex items-center gap-2 border-2 border-brand-cyan text-brand-cyan font-bold text-sm px-6 py-3 rounded-full"
-            >
-              Para mi empresa →
-            </motion.div>
-          </div>
-        </motion.button>
-
       </div>
+
+      {/* ── Tagline ── */}
+      <div className="flex justify-center px-4 mt-3">
+        <p
+          className="text-center text-white/70 text-lg md:text-xl whitespace-nowrap"
+          style={{ fontFamily: "'Montserrat', sans-serif" }}
+        >
+          Elevamos tu{' '}
+          <span className="text-brand-yellow font-bold text-xl md:text-2xl">JUEGO PERSUASIVO</span>
+          {' '}Para que más personas digan que{' '}
+          <span className="text-brand-yellow font-bold text-xl md:text-2xl">&ldquo;Sí&rdquo;</span>
+          {' '}a lo que propones
+        </p>
+      </div>
+
+      {/* ── Cards ── */}
+      <div className="flex-1 flex items-center justify-center px-6 md:px-16" style={{ paddingTop: '130px', paddingBottom: '40px' }}>
+        <div className="flex flex-col md:flex-row items-start justify-center gap-6 md:gap-8 w-full max-w-5xl">
+
+          <PersuasionCard
+            imageSrc="/B2CCard.svg"
+            imageAlt="Profesional individual"
+            accentColor="#F2BE1B"
+            glowColor="rgba(242,190,27,0.18)"
+            label="SOY PROFESIONAL"
+            titleTop="Quiero potenciar"
+            titleHighlight="mis habilidades de persuasión"
+            description={`"Capacitaciones, asesorías y programas\nBasados en ciencia conductual"`}
+            ctaText="Explorar programas"
+            onClick={() => onSelect('b2c')}
+          />
+
+          {/* Separador "O" */}
+          <div className="hidden md:flex flex-col items-center justify-center flex-shrink-0 self-stretch relative px-2">
+            {/* Línea vertical */}
+            <div className="absolute inset-0 flex justify-center">
+              <div className="w-px h-full" style={{ background: 'linear-gradient(to bottom, transparent, rgba(255,255,255,0.15) 20%, rgba(255,255,255,0.15) 80%, transparent)' }} />
+            </div>
+            {/* Anillos + O */}
+            <div className="relative flex items-center justify-center" style={{ zIndex: 1 }}>
+              {/* Anillo exterior */}
+              <div
+                className="absolute rounded-full"
+                style={{ width: '108px', height: '108px', border: '1px solid rgba(255,255,255,0.12)' }}
+              />
+              {/* Anillo interior */}
+              <div
+                className="absolute rounded-full"
+                style={{ width: '78px', height: '78px', border: '1px solid rgba(255,255,255,0.18)' }}
+              />
+              {/* Círculo central */}
+              <div
+                className="relative flex items-center justify-center rounded-full"
+                style={{ width: '54px', height: '54px', backgroundColor: '#0f1825', border: '1px solid rgba(255,255,255,0.25)' }}
+              >
+                <span
+                  className="text-white font-bold select-none"
+                  style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '1.28rem', lineHeight: 1 }}
+                >
+                  O
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <PersuasionCard
+            imageSrc="/B2BCard.svg"
+            imageAlt="Empresa o equipo"
+            accentColor="#5FC5E3"
+            glowColor="rgba(95,197,227,0.18)"
+            label="SOY EMPRESA"
+            titleTop="Quiero potenciar"
+            titleHighlight="la persuasión de mi equipo"
+            description={`"Capacitación corporativa para equipos que\nquieren influir, liderar y convertir mejor"`}
+            ctaText="Ver soluciones corporativas"
+            onClick={() => onSelect('b2b')}
+          />
+
+        </div>
+      </div>
+
+      {/* ── Footer strip ── */}
+      <div className="flex items-center justify-center gap-4 py-5 px-4">
+        <img src={CerebroAmarillo} alt="Ciencia" className="h-24 w-24 object-contain" />
+        <p
+          className="text-sm md:text-base font-bold whitespace-nowrap"
+          style={{ fontFamily: "'Montserrat', sans-serif" }}
+        >
+          <span className="text-brand-yellow">CIENCIA</span>
+          <span className="text-white/50"> + </span>
+          <span className="text-brand-cyan">ESTRATEGIA</span>
+          <span className="text-white/50"> + </span>
+          <span className="text-white">PRÁCTICA</span>
+          <span className="text-white/50"> = </span>
+          <span className="text-brand-yellow">INFLUENCIA REAL</span>
+        </p>
+        <img src={DianaCeleste} alt="Influencia Real" className="h-24 w-24 object-contain" />
+      </div>
+
     </div>
   );
 }
