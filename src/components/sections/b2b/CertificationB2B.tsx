@@ -1,16 +1,16 @@
 import { motion, type Variants } from 'framer-motion';
 import { Award, ShieldCheck } from 'lucide-react';
-import Button from '../ui/Button';
-import { WHATSAPP_LINKS, IMAGE_URLS } from '../../data/content';
+import Button from '../../ui/Button';
+import { WHATSAPP_LINKS, IMAGE_URLS } from '../../../data/content';
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0 },
 };
 
-export default function Certification() {
+export default function CertificationB2B() {
   return (
-    <section className="bg-brand-dark py-10 md:py-16 px-4 md:px-8 lg:px-16">
+    <section className="bg-brand-darker py-10 md:py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
 
         {/* Top heading */}
@@ -22,11 +22,8 @@ export default function Certification() {
           className="text-center mb-8"
           style={{ fontFamily: "'Montserrat', sans-serif" }}
         >
-          <p className="text-white/80 text-lg md:text-2xl font-light">
-            Con <span className="text-brand-yellow font-semibold">The Influence Box Academy</span>
-          </p>
-          <p className="text-white text-xl md:text-3xl font-bold">
-            lleva tu certificación Internacionalmente
+          <p className="text-white text-xl md:text-3xl font-bold leading-snug">
+            Con <span className="text-brand-yellow font-semibold">The Influence Box Academy</span> tu equipo puede obtener una <span className="text-brand-yellow">Certificación Internacional.</span>
           </p>
         </motion.div>
 
@@ -61,11 +58,11 @@ export default function Certification() {
               </h2>
 
               <p className="text-white/70 font-inter text-xs md:text-sm leading-relaxed mb-3 text-justify">
-                A través de <span className="text-brand-yellow font-semibold">The Influence Box Academy</span> puedes aprender y obtener la certificación internacional más completa en persuasión ética, formada por el <span className="font-semibold text-white">Dr. Robert Cialdini</span> con una mejora económica sobre la inversión en la{' '}<a href="https://cialdini.com/certified-practitioner" target="_blank" rel="noopener noreferrer" className="font-semibold text-white hover:text-brand-yellow transition-colors underline underline-offset-2">CERTIFICACIÓN OFICIAL</a>, la cual en su página alcanza los $1500.00.
+                A través de <span className="text-brand-yellow font-semibold">The Influence Box Academy</span> tu equipo puede aprender y obtener la certificación internacional más completa en persuasión ética, formada por el <span className="font-semibold text-white">Dr. Robert Cialdini</span> con una mejora económica sobre la inversión en la{' '}<a href="https://cialdini.com/certified-practitioner" target="_blank" rel="noopener noreferrer" className="font-semibold text-white hover:text-brand-yellow transition-colors underline underline-offset-2">CERTIFICACIÓN OFICIAL</a>, la cual en su página alcanza los $1500.00.
               </p>
 
               <p className="text-white/70 font-inter text-xs md:text-sm leading-relaxed mb-5 text-justify">
-                La certificación internacional del Instituto Cialdini es reconocida por las principales empresas del mundo. Demuestra que dominas la ciencia de la persuasión ética y estratégica.
+                La certificación internacional del Instituto Cialdini es reconocida por las principales empresas del mundo. Demuestra que tu equipo domina la ciencia de la persuasión ética y estratégica.
               </p>
 
               <div className="flex flex-col gap-2 mb-5">
@@ -82,7 +79,7 @@ export default function Certification() {
               </div>
 
               <p className="text-white/50 font-inter text-xs italic mb-5">
-                Por si deseas dar un paso más y acreditar formalmente lo que ya dominas.
+                Para equipos que desean dar un paso más y acreditar formalmente lo que ya dominan.
               </p>
 
               <div className="lg:flex lg:justify-start flex justify-center">

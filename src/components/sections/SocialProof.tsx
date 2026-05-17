@@ -28,7 +28,7 @@ const sources = [
 
 export default function SocialProof() {
   return (
-    <section className="bg-brand-dark py-10 md:py-16 px-4 md:px-8 lg:px-16">
+    <section className="bg-brand-darker py-10 md:py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
 
         {/* Título */}

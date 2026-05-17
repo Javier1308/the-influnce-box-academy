@@ -1,3 +1,5 @@
+export const WHATSAPP_PHONE = '51954707181';
+
 export const WHATSAPP_LINKS = {
   workshop: 'https://wa.link/twiqg6',
   coaching: 'https://wa.link/xxregs',
@@ -235,7 +237,7 @@ export type PackageTier = 'diamond' | 'platinum' | 'gold';
 export const B2B_PACKAGES = [
   {
     id: 'diamond' as PackageTier,
-    name: 'Diamond',
+    name: 'Diamond + Bonus',
     gem: '💎',
     type: 'Teórico-Práctica + Material impreso',
     description:
@@ -249,7 +251,7 @@ export const B2B_PACKAGES = [
     includes: [
       'Certificados digitales e impresos',
       'Bitácora de Sesión Estratégica',
-      'Resumen Ejecutivo (formato digital PDF)',
+      'Resumen Ejecutivo',
       '5 Micro-entrenamientos de prospección y cierre de ventas',
     ],
     ctaLink: 'https://wa.link/1x71tx',
@@ -267,7 +269,10 @@ export const B2B_PACKAGES = [
     regularPrice: 4330,
     discountedPrice: 3897,
     recommended: false,
-    includes: ['Certificado de participación digital'],
+    includes: [
+      'Certificado de participación digital e impreso',
+      'Bitácora de Sesión Estratégica',
+    ],
     ctaLink: 'https://wa.link/1x71tx',
   },
   {

@@ -1,4 +1,6 @@
-import { motion } from 'framer-motion';
+import { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 import Button from '../ui/Button';
 import { WHATSAPP_LINKS } from '../../data/content';
 import Logo from '../../assets/images/LogoTIBAHorizontal.png';
@@ -9,6 +11,66 @@ type NavbarProps = {
   onSwitchMode: (mode: AppMode) => void;
   onGoHome: () => void;
 };
+
+const NOSOTROS_LINKS = [
+  { label: 'Quiénes Somos', href: '#quienes-somos' },
+  { label: 'Visión y Misión', href: '#vision-mision' },
+];
+
+function NosotrosDropdown() {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    }
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, []);
+
+  const handleNav = (href: string) => {
+    setOpen(false);
+    const el = document.querySelector(href);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  return (
+    <div ref={ref} className="relative hidden md:block">
+      <button
+        onClick={() => setOpen(o => !o)}
+        className="flex items-center gap-1 text-white/70 hover:text-white text-xs font-semibold uppercase tracking-wider transition-colors"
+        style={{ fontFamily: "'Montserrat', sans-serif" }}
+      >
+        Nosotros
+        <ChevronDown size={14} className={`transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
+      </button>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 6 }}
+            transition={{ duration: 0.18 }}
+            className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-48 rounded-xl border border-white/10 bg-brand-dark shadow-[0_8px_32px_rgba(0,0,0,0.5)] overflow-hidden z-50"
+          >
+            {NOSOTROS_LINKS.map(link => (
+              <button
+                key={link.href}
+                onClick={() => handleNav(link.href)}
+                className="w-full text-left px-4 py-3 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                {link.label}
+              </button>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
 
 export default function Navbar({ mode, onSwitchMode, onGoHome }: NavbarProps) {
   return (
@@ -29,9 +91,12 @@ export default function Navbar({ mode, onSwitchMode, onGoHome }: NavbarProps) {
         </button>
 
         <div className="flex items-center gap-3 md:gap-6">
+          {/* Nosotros dropdown — solo B2C */}
+          {mode === 'b2c' && <NosotrosDropdown />}
+
           {/* Switcher B2C / B2B */}
           <div
-            className="hidden sm:flex items-center bg-white/5 border border-white/10 rounded-full p-1 gap-1"
+            className="flex items-center bg-white/5 border border-white/10 rounded-full p-1 gap-1"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             <button

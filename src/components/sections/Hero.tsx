@@ -1,8 +1,8 @@
-import { useRef } from 'react';
-import { motion, type Variants } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { useRef, useState } from 'react';
+import { motion, type Variants, AnimatePresence } from 'framer-motion';
+import { ChevronDown, X } from 'lucide-react';
 import Button from '../ui/Button';
-import { HERO } from '../../data/content';
+import { HERO, WHATSAPP_PHONE } from '../../data/content';
 import { useCountdownOffer } from '../../hooks/useCountdownOffer';
 import FreddyImg from '../../assets/images/Freddy.jpeg';
 import VideoThumbnail from '../../assets/images/Miniatura.jpeg';
@@ -12,6 +12,105 @@ import Badge1 from '../../assets/images/Badge1.png';
 import Badge2 from '../../assets/images/Badge2.png';
 import Badge3 from '../../assets/images/Badge3.png';
 import CienciaIcons from '../../assets/images/Ciencia_Icons.png';
+
+type OfferForm = { nombre: string; dni: string; correo: string; celular: string };
+
+function OfferModal({ onClose }: { onClose: () => void }) {
+  const [form, setForm] = useState<OfferForm>({ nombre: '', dni: '', correo: '', celular: '' });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const msg = encodeURIComponent(
+      `Hola, quiero aprovechar el Dscto del 40%.\n\nNombre: ${form.nombre}\nDNI: ${form.dni}\nCorreo: ${form.correo}\nCelular: ${form.celular}`
+    );
+    window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${msg}`, '_blank', 'noopener,noreferrer');
+    onClose();
+  };
+
+  const fields: { name: keyof OfferForm; label: string; type: string; placeholder: string }[] = [
+    { name: 'nombre',  label: 'Nombre',  type: 'text',  placeholder: 'Tu nombre completo' },
+    { name: 'dni',     label: 'DNI',     type: 'text',  placeholder: 'Tu número de DNI' },
+    { name: 'correo',  label: 'Correo',  type: 'email', placeholder: 'tucorreo@ejemplo.com' },
+    { name: 'celular', label: 'Celular', type: 'tel',   placeholder: 'Tu número de celular' },
+  ];
+
+  return (
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ backgroundColor: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(6px)' }}
+      onClick={onClose}
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.92, y: 24 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.92, y: 24 }}
+        transition={{ duration: 0.28, ease: [0.25, 0.1, 0.25, 1] }}
+        className="relative w-full max-w-md rounded-2xl border border-brand-yellow/30 bg-[#0A0F1A] p-7 shadow-[0_0_60px_rgba(242,190,27,0.15)]"
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Close */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-white/40 hover:text-white/80 transition-colors"
+        >
+          <X size={20} />
+        </button>
+
+        {/* Header */}
+        <div className="flex flex-col items-center gap-2 mb-6 text-center">
+          <span className="inline-flex items-center gap-2 border border-brand-yellow text-brand-yellow text-xs font-semibold font-inter px-4 py-1.5 rounded-full bg-brand-yellow/10">
+            <span className="inline-block w-2 h-2 rounded-full bg-brand-yellow animate-pulse" />
+            ¡40% de descuento hoy!
+          </span>
+          <h3
+            className="text-white font-black text-xl leading-tight mt-1"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
+            Aprovecha esta oferta
+          </h3>
+          <p className="text-white/50 text-xs font-inter">
+            Completa tus datos y te contactamos por WhatsApp.
+          </p>
+        </div>
+
+        {/* Form */}
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          {fields.map(f => (
+            <div key={f.name} className="flex flex-col gap-1.5">
+              <label
+                htmlFor={f.name}
+                className="text-white/60 text-xs font-semibold uppercase tracking-wider font-inter"
+              >
+                {f.label}
+              </label>
+              <input
+                id={f.name}
+                name={f.name}
+                type={f.type}
+                placeholder={f.placeholder}
+                value={form[f.name]}
+                onChange={handleChange}
+                required
+                className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white text-sm font-inter placeholder:text-white/25 focus:outline-none focus:border-brand-yellow/60 focus:bg-brand-yellow/5 transition-colors"
+              />
+            </div>
+          ))}
+
+          <button
+            type="submit"
+            className="mt-2 w-full bg-brand-yellow text-black font-black text-sm py-4 rounded-full hover:bg-brand-yellow/90 hover:scale-[1.02] transition-all duration-200 font-inter tracking-wide"
+          >
+            Quiero aprovechar el Dscto del 40% →
+          </button>
+        </form>
+      </motion.div>
+    </div>
+  );
+}
 
 // Pega aquí la URL del video cuando la tengas (YouTube embed o similar)
 // Ejemplo YouTube: 'https://www.youtube.com/embed/TU_ID_AQUI'
@@ -25,6 +124,7 @@ const fadeUp: Variants = {
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const offer = useCountdownOffer();
+  const [modalOpen, setModalOpen] = useState(false);
 
   const handlePlayVideo = () => {
     videoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -33,6 +133,9 @@ export default function Hero() {
 
   return (
     <section className="relative bg-brand-dark overflow-hidden">
+      <AnimatePresence>
+        {modalOpen && <OfferModal onClose={() => setModalOpen(false)} />}
+      </AnimatePresence>
       {/* Science icons background */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.07]"
@@ -117,10 +220,13 @@ export default function Hero() {
           {/* Badge oferta + countdown */}
           {offer.active && (
             <div className="flex flex-col items-center gap-2">
-              <div className="inline-flex items-center gap-2 border border-brand-yellow text-brand-yellow text-xs font-semibold font-inter px-4 py-1.5 rounded-full bg-brand-yellow/10">
+              <button
+                onClick={() => setModalOpen(true)}
+                className="inline-flex items-center gap-2 border border-brand-yellow text-brand-yellow text-xs font-semibold font-inter px-4 py-1.5 rounded-full bg-brand-yellow/10 hover:bg-brand-yellow/20 hover:scale-105 transition-all duration-200 cursor-pointer"
+              >
                 <span className="inline-block w-2 h-2 rounded-full bg-brand-yellow animate-pulse" />
                 ¡Aprovecha hoy el 40% de descuento total!
-              </div>
+              </button>
               <div className="flex items-center gap-2 text-white/80 font-inter text-sm">
                 <img src={RelojLogo} alt="" className="w-9 h-9 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(78%) sepia(85%) saturate(500%) hue-rotate(358deg) brightness(98%) contrast(95%)' }} />
                 <span>Expira en</span>

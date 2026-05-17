@@ -152,16 +152,6 @@ export default function PackagesB2B() {
           })}
         </div>
 
-        {/* Condiciones */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center text-white/30 text-xs mb-12"
-          style={{ fontFamily: "'Montserrat', sans-serif" }}
-        >
-          Propuesta válida hasta el 15 de abril 2026 · 50% adelantado + 50% 1 día antes de la primera sesión · Se emite RHE
-        </motion.p>
 
         {/* Formatos ágiles */}
         <motion.div
@@ -209,7 +199,7 @@ export default function PackagesB2B() {
                     className="inline-block mt-1 text-[10px] font-bold text-brand-yellow border border-brand-yellow/40 rounded-full px-3 py-1 hover:bg-brand-yellow/10 transition-colors"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                   >
-                    Consultar →
+                    Solicitar →
                   </a>
                 </div>
               </motion.div>

@@ -41,7 +41,7 @@ function MailIcon({ size = 16 }: { size?: number }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-dark border-t border-white/10">
+    <footer className="border-t border-white/10" style={{ backgroundColor: '#050B14' }}>
       {/* Main footer body */}
       <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-16 py-10 md:py-16 flex flex-col md:flex-row items-start justify-between gap-8 md:gap-12">
 
