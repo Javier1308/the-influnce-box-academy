@@ -7,10 +7,6 @@ const fadeUp: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as [number,number,number,number] } },
 };
 
-const HIGHLIGHTS = [
-  'capacitaciones, asesorías, workshops y entrenamientos',
-  'psicología de la persuasión e influencia social',
-];
 
 export default function AboutInfluenceBoxSection() {
   return (

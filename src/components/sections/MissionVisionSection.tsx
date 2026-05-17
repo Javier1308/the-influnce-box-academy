@@ -15,15 +15,13 @@ function Block({
   icon: Icon,
   accentColor,
   label,
-  title,
   highlight,
   children,
 }: {
   index: number;
-  icon: React.ComponentType<{ size?: number; className?: string; strokeWidth?: number }>;
+  icon: React.ComponentType<{ size?: number; className?: string; strokeWidth?: number; style?: React.CSSProperties }>;
   accentColor: string;
   label: string;
-  title: string;
   highlight: string;
   children: React.ReactNode;
 }) {
@@ -49,7 +47,7 @@ function Block({
           className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
           style={{ backgroundColor: `${accentColor}18`, border: `1px solid ${accentColor}40` }}
         >
-          <Icon size={20} style={{ color: accentColor }} strokeWidth={1.5} />
+          <Icon size={20} className="transition-colors" strokeWidth={1.5} style={{ color: accentColor } as React.CSSProperties} />
         </div>
         <span
           className="text-xs font-bold uppercase tracking-[0.2em]"
@@ -125,7 +123,6 @@ export default function MissionVisionSection() {
             icon={Target}
             accentColor="#F2BE1B"
             label="Nuestra Visión"
-            title="Nuestra Visión"
             highlight="Visión"
           >
             <p
@@ -152,7 +149,6 @@ export default function MissionVisionSection() {
             icon={Compass}
             accentColor="#5FC5E3"
             label="Nuestra Misión"
-            title="Nuestra Misión"
             highlight="Misión"
           >
             <p
