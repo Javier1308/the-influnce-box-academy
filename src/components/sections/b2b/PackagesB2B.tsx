@@ -12,6 +12,8 @@ const tierStyles = {
     badgeText: 'text-black',
     nameColor: 'text-brand-yellow',
     glow: 'shadow-[0_0_40px_rgba(242,190,27,0.12)]',
+    icon: '/assets/b2b-products/diamond.png',
+    iconSize: 'w-[73px] h-[73px]',
   },
   platinum: {
     border: 'border-white/20',
@@ -20,6 +22,8 @@ const tierStyles = {
     badgeText: 'text-white/70',
     nameColor: 'text-white',
     glow: '',
+    icon: '/assets/b2b-products/platinum.png',
+    iconSize: 'w-[52px] h-[52px]',
   },
   gold: {
     border: 'border-white/20',
@@ -28,6 +32,8 @@ const tierStyles = {
     badgeText: 'text-white/70',
     nameColor: 'text-white',
     glow: '',
+    icon: '/assets/b2b-products/gold.png',
+    iconSize: 'w-[52px] h-[52px]',
   },
 };
 
@@ -77,7 +83,11 @@ export default function PackagesB2B() {
 
                 {/* Header paquete */}
                 <div className="flex items-center gap-3 pt-2">
-                  <span className="text-3xl">{pkg.gem}</span>
+                  <img
+                    src={styles.icon}
+                    alt={pkg.name}
+                    className={`${styles.iconSize} object-contain flex-shrink-0`}
+                  />
                   <div>
                     <p className="text-white/40 text-[10px] uppercase tracking-widest font-bold" style={{ fontFamily: "'Montserrat', sans-serif" }}>Paquete</p>
                     <h3 className={`font-black text-2xl ${styles.nameColor}`} style={{ fontFamily: "'Playfair Display', serif" }}>
